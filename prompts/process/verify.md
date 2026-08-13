@@ -16,7 +16,7 @@ The Check it was supposed to meet:
 <paste the Check section from the prompt file>
 """
 
-Sources I consider valid: things I can open (tickets, emails, notes, calendar events, docs). Not "generally known." Not the model's prior knowledge.
+Sources I consider valid: rows in `sources.md` if I attached it; otherwise things I can open (tickets, emails, notes, calendar events, docs). Not "generally known." Not the model's prior knowledge. Not a system I did not name.
 
 Return:
 

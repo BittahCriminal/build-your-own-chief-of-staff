@@ -81,7 +81,7 @@ Installing a skill, or having a clever conversation, proves nothing ([one-job te
 
 ### 5. Run it once. Verify it.
 
-Every substantive claim needs a source you can open. Gaps stay gaps — "I could not find X" — they do not become confident prose ([reusable rig citation guard](https://app.notion.com/p/392059b703e1814b96a6dd9913180844)). You read the draft against the check. You send, or you don't.
+Every substantive claim needs a source you can open. You name those systems once in a private `sources.md` — Work IQ, Spark, a ticket tracker, a spreadsheet, whatever you would actually click. The agent does not pick a vendor for you. Gaps stay gaps — "I could not find X" — they do not become confident prose ([reusable rig citation guard](https://app.notion.com/p/392059b703e1814b96a6dd9913180844)). You read the draft against the check. You send, or you don't.
 
 Self-reported "done" is not a check ([verification gap](https://app.notion.com/p/36f059b703e18142b351f70732b09c29)). The machine enforces the floor (sources present, template filled, length). You own the ceiling (is the recommendation actually right).
 

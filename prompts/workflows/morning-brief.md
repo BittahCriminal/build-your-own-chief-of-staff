@@ -5,7 +5,7 @@ Start of day. Reconstruct the picture so you walk in oriented instead of reactiv
 
 ## Inputs
 Required: `priorities.md`, `people.md`, `open-loops.md`, today's date.
-Optional: calendar for today, last 24h of mail/chat, ticket list. If a source is missing, say so in Coverage — do not pretend you read it.
+Optional: `sources.md`; then only the systems named there (calendar, mail/chat, work items). If a source is missing, say so in Coverage — do not pretend you read it. Do not pick a vendor I did not name.
 
 ## Steps
 1. Read the context files before anything else.

@@ -18,7 +18,7 @@ These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, Cha
 
 0. Put the kit in your space: [`START-HERE.md`](START-HERE.md) (browser, unzip, or Cursor). Workstation shortcut: paste [`prompts/process/bring-it-home.md`](prompts/process/bring-it-home.md).
 1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method — including **why this stalls** and what to do when you freeze.
-2. Fill in the **private** context folder (not `context-templates/` in this repo). Who you are, this quarter's priorities, three writing samples (10 min).
+2. Fill in the **private** context folder (not `context-templates/` in this repo). Who you are, this quarter's priorities, three writing samples, and **where truth lives** (`sources.md`) (10 min).
 3. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win (5 min).
 4. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
 5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat.
