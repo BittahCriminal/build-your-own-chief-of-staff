@@ -14,7 +14,8 @@ Then, in this order:
 4. [build-context.md](process/build-context.md) — once
 5. The matching workflow below
 6. [verify.md](process/verify.md)
-7. [correct-the-file.md](process/correct-the-file.md) — when you had to fix the draft
+7. [evidence-based-investigation.md](process/evidence-based-investigation.md) — when a draft was built on second-hand or remembered facts and needs grounding, not a rewrite
+8. [correct-the-file.md](process/correct-the-file.md) — when you had to fix the draft
 
 If a project already died: [diagnose-the-stall.md](process/diagnose-the-stall.md).
 
