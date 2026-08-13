@@ -17,6 +17,29 @@ This is the whole course. Everything else is technique.
 
 Why both: if checking the answer costs as much as producing it, extra attempts just grow the pile. That is the checkability test from [agent-shaped work](https://app.notion.com/p/399059b703e18107b20dfe6bb5c32626). "Don't bother" is a legitimate verdict. [The verification notes](https://app.notion.com/p/36f059b703e18142b351f70732b09c29) say the same thing another way: if you cannot name what would make you say "not yet," you have a vibe, not a job.
 
+## If you freeze
+
+Staring at a capable agent with nothing to type is the common failure, not a personal one. Agents sit idle because nobody dispatched them — not because the model was too dumb ([agent-shaped work](https://app.notion.com/p/399059b703e18107b20dfe6bb5c32626)). People buy the tool, connect a few things, and then face an empty prompt ([let history pick](https://app.notion.com/p/3a0059b703e181c69fafc66f28f76c99)).
+
+Do not let the model pick the problem *and* build it. That hides the judgment call inside the run. Ask it to show evidenced options. You choose. **None** is allowed. Frequency is evidence that a job exists, not proof that automating it would matter.
+
+Paste [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md). It walks last week → split the blob → edge vs core → the two tests → one fast win.
+
+## Why this work fails
+
+From the same table, the stall is almost never “we needed a smarter model” ([ChatGPT-5 won’t save you](https://app.notion.com/p/36f059b703e1818fa542e8696353ebb9)).
+
+| Trap | What it looks like | What to do instead |
+| --- | --- | --- |
+| **Core-first** | Automate the judgment, the craft, the whole workflow. Three months later: stalled agent, bloated scope. | Start at the **edges**: prep, check, summarize, package, hand off. The core stays human until the edges are boringly reliable ([why agent projects fail](https://app.notion.com/p/36f059b703e181d9bd25f984c8bd6945)). |
+| **Blob-as-one-job** | “Handle my email.” “Generate the PRD.” “Be my chief of staff.” | Split. Most workflows are five or six tasks pretending to be one ([fails at the task level](https://app.notion.com/p/36f059b703e181f9afedc637cd6529f4)). |
+| **No check / false success** | The draft looks finished. The filename matches. The agent said `done`. The world did not change. | Describe what should exist *without* the word “done.” Proof comes from the system that owns the result, not from the transcript ([false success](https://app.notion.com/p/3b5059b703e1819fbd41c6ba9658b0c6)). |
+| **Waiting for the next model** | “We’ll try again when GPT-N ships.” | Name the job, the source of truth, the authority limit, and the owner. A better engine in a Model T is still a Model T. |
+| **Nobody owns it** | Everyone can use it; it quietly drifts. | One owner, close enough to notice ([ownership](https://app.notion.com/p/387059b703e18195a327e34da56998cb)). |
+| **It sends** | First version mails, files, or pays. | Drafts only. A bad send is two problems. |
+
+If a project already stalled, paste [`prompts/process/diagnose-the-stall.md`](prompts/process/diagnose-the-stall.md).
+
 ## Seven steps
 
 ### 1. Name one job
