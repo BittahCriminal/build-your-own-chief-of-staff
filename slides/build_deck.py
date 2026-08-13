@@ -114,7 +114,7 @@ def build():
     prs = Presentation()
     prs.slide_width = W
     prs.slide_height = H
-    TOTAL = 23
+    TOTAL = 24
 
     def fin(s, n, note):
         footer(s, n, TOTAL)
@@ -154,7 +154,7 @@ Cite the source of truth if asked: the author's Substack research table in Notio
     fin(s, 2, """
 Pause on the third bullet. These are ordinary markdown files. If their IT department only allows Copilot, they are fine. If they live in ChatGPT, they are fine.
 
-The context files they fill in privately — who they are, this quarter's priorities, how they write — are the operating system. Swap the vendor tomorrow and nothing important moves.
+The context files they fill in privately — who they are, this quarter's priorities, how they write, where truth lives — are the operating system. Swap the vendor tomorrow and nothing important moves. START-HERE.md is how the folder lands on a PC. Do not walk the file tree here.
 
 That claim is from the context-files row in the table (Notion: https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319) and from the delegation kit's memory scaffold (https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756).
 """)
@@ -386,6 +386,33 @@ Do not take questions about which model is 'best' here. Route them out: once the
 The reusable-rig essay is explicit that the skills should be local, inspectable, and independent of whichever AI app you are renting this month. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
 """)
 
+    # Kit map — overview only
+    s = blank(prs)
+    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
+            "What's in the kit", size=32, bold=True)
+    kit = [
+        ("START-HERE.md", "Get the files onto a PC"),
+        ("PROCESS.md", "The method — two tests"),
+        ("prompts/process/", "Turn any job into a workflow"),
+        ("prompts/workflows/", "The CoS jobs, ready to paste"),
+        ("context-templates/", "Blanks. Copy privately. Fill them."),
+        ("how-to/", "Which box to paste into"),
+    ]
+    for i, (fn, desc) in enumerate(kit):
+        r, c = divmod(i, 3)
+        left = Inches(0.8 + c * 4.0)
+        top = Inches(1.5 + r * 2.2)
+        add_rect(s, left, top, Inches(3.8), Inches(2.0), NAVY2)
+        textbox(s, left + Inches(0.2), top + Inches(0.35), Inches(3.4), Inches(0.55), fn, size=16, bold=True, color=GOLD)
+        textbox(s, left + Inches(0.2), top + Inches(1.0), Inches(3.4), Inches(0.7), desc, size=16, color=CREAM)
+    fin(s, 13, """
+Overview, not a tour. Six things, six purposes. Do not open evidence-based-investigation.md unless someone asks how to ground a rumor — it lives under process/.
+
+Personal data never ships in this repo. They copy context-templates/ to a private folder. START-HERE.md is unzip / browser / Cursor.
+
+Cite: map of where material lives — https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319
+""")
+
     # 10 Name one job
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
@@ -397,7 +424,7 @@ The reusable-rig essay is explicit that the skills should be local, inspectable,
         "Prefer a pain that has happened at least three times.",
         "If you cannot point at examples, you do not have a first job yet.",
     ], size=22, spacing=14)
-    fin(s, 13, """
+    fin(s, 14, """
 Have them shout a job. Split blobs. 'Email' becomes 'Monday status to my manager.' 'Meetings' becomes 'recap of the staff meeting within the hour.'
 
 First-agent-job guide: one annoying problem, three real occurrences, inbox text is data not instructions. Notion: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
@@ -423,7 +450,7 @@ Prompt they will paste: prompts/process/name-the-job.md and the-two-tests.md
     textbox(s, Inches(0.8), Inches(4.5), Inches(11.5), Inches(1.8),
             "Approvals sit where actions become hard to undo: send, pay, publish, delete.\nScore the spec: could a stranger run it? Is success binary? If not, it will create more work than it saves.",
             size=18, color=MUTED)
-    fin(s, 14, """
+    fin(s, 15, """
 This is the spec from the Delegation Kit: inputs, steps, constraints, approvals at reversibility boundaries, failure handling. Score: can a stranger execute it without questions; are success criteria binary. Three or below means the spec creates more work than it saves. Notion: https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756
 
 Prompt: prompts/process/write-the-sop.md
@@ -438,20 +465,26 @@ Prompt: prompts/process/write-the-sop.md
         ("priorities.md", "This quarter, dated"),
         ("people.md", "Who changes your week"),
         ("voice.md", "How you actually write"),
+        ("sources.md", "Where you would click to check"),
         ("open-loops.md", "What is still open"),
         ("decisions.md", "What you already settled"),
     ]
     for i, (fn, desc) in enumerate(files):
-        r, c = divmod(i, 3)
-        left = Inches(0.8 + c * 4.0)
-        top = Inches(1.55 + r * 2.15)
-        add_rect(s, left, top, Inches(3.8), Inches(1.95), NAVY2)
-        textbox(s, left + Inches(0.2), top + Inches(0.35), Inches(3.4), Inches(0.5), fn, size=18, bold=True, color=GOLD)
-        textbox(s, left + Inches(0.2), top + Inches(0.95), Inches(3.4), Inches(0.6), desc, size=16, color=CREAM)
-    fin(s, 15, """
-Do not dump this into one encyclopedia. One giant project file becomes a graveyard of stale rules — that is the OpenAI story in the context-files essay. Split: stable instructions, current state, a map of where material lives, decision history. When you change your mind, name what is replaced and keep the old assumption in the log. Notion: https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319
+        if i < 4:
+            left = Inches(0.8 + i * 3.05)
+            top = Inches(1.45)
+            w = Inches(2.9)
+        else:
+            left = Inches(0.8 + (i - 4) * 4.0)
+            top = Inches(3.65)
+            w = Inches(3.8)
+        add_rect(s, left, top, w, Inches(1.95), NAVY2)
+        textbox(s, left + Inches(0.15), top + Inches(0.3), w - Inches(0.3), Inches(0.55), fn, size=16, bold=True, color=GOLD)
+        textbox(s, left + Inches(0.15), top + Inches(0.95), w - Inches(0.3), Inches(0.7), desc, size=15, color=CREAM)
+    fin(s, 16, """
+Do not dump this into one encyclopedia. One giant project file becomes a graveyard of stale rules — that is the OpenAI story in the context-files essay. Split: stable instructions, current state, a map of where material lives (sources.md), decision history. When you change your mind, name what is replaced and keep the old assumption in the log. Notion: https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319
 
-These files stay private. The public repo ships blanks. Prompt: prompts/process/build-context.md
+These files stay private. The public repo ships blanks. They name the systems they actually open — the agent does not pick a vendor. Prompt: prompts/process/build-context.md
 """)
 
     # 13 Prompt file is the process
@@ -461,7 +494,7 @@ These files stay private. The public repo ships blanks. Prompt: prompts/process/
     textbox(s, Inches(1.4), Inches(3.3), Inches(10.5), Inches(2.2),
             "You do not re-explain yourself in chat.\nIf the output is wrong, the file is wrong.\nInstalling a skill proves the files arrived. Only a real job proves they fit.",
             size=22, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 16, """
+    fin(s, 17, """
 One-job test: don't evaluate a skill by reading the promise. Give it one real job, write pass/fail first, keep the evidence. Keep, fork, or delete. Notion: https://app.notion.com/p/3b0059b703e181fa81add3d2cd98aeaf
 
 This is why we ship prompt files, not a plugin, in this repo.
@@ -477,8 +510,10 @@ This is why we ship prompt files, not a plugin, in this repo.
         "Self-reported “done” is not a check.",
         "You read the draft against the Check section. Then you send — or you don't.",
     ], size=22, spacing=16)
-    fin(s, 17, """
+    fin(s, 18, """
 Citation guard from the reusable-rig essay: no anchor, no claim. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+
+They name the systems in sources.md. You do not pick Outlook vs Gmail for them. If someone asks how to ground a rumor, that is evidence-based-investigation.md — do not teach it here.
 
 Printed holes ('usage: not available') are the system working. Invented numbers inside a confident summary are the failure mode people are right to fear. That example is in the agent-shaped-work piece.
 
@@ -495,7 +530,7 @@ Prompt: prompts/process/verify.md
         "Delete a stale instruction before you add a new one.",
         "Somebody owns the agent. One person, close enough to notice drift.",
     ], size=22, spacing=14)
-    fin(s, 18, """
+    fin(s, 19, """
 Maintenance loop: you are maintaining the harness, not a prompt. Seven surfaces — job, diet, memory, tools, reach, proof, value. Repeated correction across three runs is a file problem. Delete before you add. Keep / change / pause / retire. Notion: https://app.notion.com/p/3bb059b703e181bfa3f5fbf9ed29b605
 
 Ownership: the fastest way to make an agent dangerous is to let everybody use it and nobody own it. Notion: https://app.notion.com/p/387059b703e18195a327e34da56998cb
@@ -510,7 +545,7 @@ Prompt: prompts/process/correct-the-file.md
     textbox(s, Inches(1.3), Inches(3.4), Inches(10.7), Inches(2.2),
             "The agent may read, organize, draft, cite, and export.\nIt may not send, file, submit, pay, sign, or close a ticket.\nYou are the principal. The agent is staff.",
             size=22, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 19, """
+    fin(s, 20, """
 This is not a legal disclaimer bolted on. It is why the same rig can be pointed at money and health paperwork. If an agent sends a flawed appeal in your name, you now have two problems. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
 
 Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
@@ -529,7 +564,7 @@ Approvals sit at reversibility boundaries — the moment an action becomes hard 
         "Do not ask “can AI do this?” Ask what shape the work is.",
         "Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner.",
     ], size=20, spacing=14)
-    fin(s, 20, """
+    fin(s, 21, """
 Six things have to be true before AI changes a workflow. Most companies have built two. Notion: https://app.notion.com/p/36f059b703e1813d801bcb34d72141b1
 
 Shape of the work: https://app.notion.com/p/36f059b703e181cf9c30f637d158b234
@@ -552,8 +587,8 @@ The CoS is the demo so they learn the motion on work they already understand. Th
         add_rect(s, Inches(0.8), top, Inches(11.5), Inches(1.0), NAVY2)
         textbox(s, Inches(1.05), top + Inches(0.28), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
         textbox(s, Inches(3.0), top + Inches(0.28), Inches(9), Inches(0.5), d, size=20, color=CREAM)
-    fin(s, 21, """
-Walk the README. If they freeze, they start at what-to-automate.md — last week, split the blob, edges first. If the two tests fail, they still used the thirty minutes correctly. The lesson is the refusal.
+    fin(s, 22, """
+Walk the README. START-HERE.md first if the files are not on the machine yet. If they freeze, they start at what-to-automate.md — last week, split the blob, edges first. If the two tests fail, they still used the thirty minutes correctly. The lesson is the refusal.
 
 Do not put the brief on a timer until they have checked it by hand several times. Automation is for a process they already trust.
 """)
@@ -570,7 +605,7 @@ Do not put the brief on a timer until they have checked it by hand several times
         "Stale is visible. Silent omission is a lie.",
         "One owner per agent.",
     ], size=24, spacing=12)
-    fin(s, 22, """
+    fin(s, 23, """
 Leave this up during Q&A if needed.
 
 Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Notion: https://app.notion.com/p/3aa059b703e1817c9571c77f8badaf77
@@ -581,9 +616,9 @@ Where the agent should stop: start where a colleague or customer already tells y
     textbox(s, Inches(0.8), Inches(1.6), Inches(11.5), Inches(1.4),
             "Automate what repeats and checks.\nKeep the rest.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
     textbox(s, Inches(1.5), Inches(3.6), Inches(10.3), Inches(2.0),
-            "Repo: the follow-along prompt kit (not the Claude plugin).\nSlides, process files, CoS workflows, blank context templates.\nSources cited from the Notion Substack table.",
+            "Repo: START-HERE.md, then the prompt kit (not the Claude plugin).\nProcess files, CoS workflows, blank context templates.\nSources cited from the Notion Substack table.",
             size=20, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 23, """
+    fin(s, 24, """
 Close by pointing at the repo. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
 If they want receipts: research/SOURCES.md lists the Notion pages this was synthesized from, starting with the Substack database https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5
