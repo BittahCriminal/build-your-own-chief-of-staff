@@ -6,8 +6,6 @@ A follow-along kit for **non-technical operators**. The Chief of Staff agent is 
 
 These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, ChatGPT, and Gemini. The model is interchangeable. Your process is not.
 
-Synthesized from the author's [Substack research table](https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5) (879 rows). Citations: [`research/SOURCES.md`](research/SOURCES.md).
-
 ## What you walk away with
 
 1. How to stand up a personal Chief of Staff agent without writing code.
