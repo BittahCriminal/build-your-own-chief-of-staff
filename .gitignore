@@ -6,3 +6,4 @@ private/
 vendor/
 __pycache__/
 *.pyc
+.~lock.*
