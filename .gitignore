@@ -2,6 +2,8 @@
 *.local.md
 context/
 private/
+my-context/
+chief-of-staff-context/
 .venv/
 vendor/
 __pycache__/

@@ -4,9 +4,10 @@ Paste one file per chat. Attach your private context copies. Drafts only.
 
 ## Process (any job)
 
-Run in this order the first time:
+Before the first job: [bring-it-home.md](process/bring-it-home.md) once on a PC or workstation, then [what-to-automate.md](process/what-to-automate.md) if you are staring at an empty prompt.
 
-0. [what-to-automate.md](process/what-to-automate.md) — if you are staring at an empty prompt
+Then, in this order:
+
 1. [the-two-tests.md](process/the-two-tests.md)
 2. [name-the-job.md](process/name-the-job.md) — skip if the job is already named
 3. [write-the-sop.md](process/write-the-sop.md)
