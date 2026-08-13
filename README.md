@@ -16,9 +16,9 @@ Synthesized from the author's [Substack research table](https://app.notion.com/p
 
 ## Start here (30 minutes)
 
-1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method.
+1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method — including **why this stalls** and what to do when you freeze.
 2. Copy [`context-templates/`](context-templates/) into a folder **you** own. Fill in who you are, this quarter's priorities, and three writing samples (10 min). Do not commit that folder to a public repo.
-3. Pick **one** job you already did by hand last week. Run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) (5 min).
+3. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win (5 min).
 4. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
 5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat.
 
