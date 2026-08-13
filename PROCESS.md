@@ -1,6 +1,6 @@
 # The process
 
-This is the curriculum. The Chief of Staff files in `prompts/workflows/` are one worked example.
+This is the curriculum. The Chief of Staff files in `prompts/workflows/` are one worked example. Get the kit onto a PC or workstation first: [`START-HERE.md`](START-HERE.md).
 
 The source of truth for these rules is the [Substack](https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5) table and the pages cited in [`research/SOURCES.md`](research/SOURCES.md).
 

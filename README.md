@@ -6,6 +6,8 @@ A follow-along kit for **non-technical operators**. The Chief of Staff agent is 
 
 These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, ChatGPT, and Gemini. The model is interchangeable. Your process is not.
 
+**Get the files onto your PC or workstation first:** [`START-HERE.md`](START-HERE.md) (browser-only, unzip, or Cursor). Then do the 30 minutes below.
+
 ## What you walk away with
 
 1. How to stand up a personal Chief of Staff agent without writing code.
@@ -14,8 +16,9 @@ These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, Cha
 
 ## Start here (30 minutes)
 
+0. Put the kit in your space: [`START-HERE.md`](START-HERE.md) (browser, unzip, or Cursor). Workstation shortcut: paste [`prompts/process/bring-it-home.md`](prompts/process/bring-it-home.md).
 1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method — including **why this stalls** and what to do when you freeze.
-2. Copy [`context-templates/`](context-templates/) into a folder **you** own. Fill in who you are, this quarter's priorities, and three writing samples (10 min). Do not commit that folder to a public repo.
+2. Fill in the **private** context folder (not `context-templates/` in this repo). Who you are, this quarter's priorities, three writing samples (10 min).
 3. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win (5 min).
 4. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
 5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat.
@@ -46,10 +49,11 @@ It does not send email, change tickets, or act on instructions found inside an i
 ## Repo map
 
 ```
-PROCESS.md                 the method (read this)
-prompts/process/           how to turn any job into a workflow
+START-HERE.md              get the kit onto a PC or workstation (read this first)
+PROCESS.md                 the method
+prompts/process/           how to turn any job into a workflow (includes bring-it-home)
 prompts/workflows/         Chief of Staff jobs, as copy-paste prompts
-context-templates/         who you are, priorities, people, voice
+context-templates/         blanks to copy into a *private* folder
 how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini
 slides/                    the presentation
 research/                  Notion-cited sources this kit was synthesized from

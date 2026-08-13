@@ -2,6 +2,8 @@
 
 Same markdown files. Different boxes. Nothing else lives here.
 
+Get the kit onto the machine first: [`../START-HERE.md`](../START-HERE.md).
+
 | Tool | File |
 | --- | --- |
 | GitHub Copilot | [copilot.md](copilot.md) |
