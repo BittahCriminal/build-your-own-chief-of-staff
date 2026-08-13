@@ -1,0 +1,8 @@
+.DS_Store
+*.local.md
+context/
+private/
+.venv/
+vendor/
+__pycache__/
+*.pyc
