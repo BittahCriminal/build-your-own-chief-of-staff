@@ -5,7 +5,7 @@ No install. No plugin. You want **two folders**:
 | Folder | What it is | Share it? |
 | --- | --- | --- |
 | **The kit** | These prompt files (`PROCESS.md`, `prompts/`, `how-to/`) | Yes — it is public |
-| **Your context** | Filled-in copies of `who-i-am.md`, `priorities.md`, `voice.md`, … | **Never** — that is you |
+| **Your context** | Filled-in copies of `who-i-am.md`, `priorities.md`, `voice.md`, `sources.md`, … | **Never** — that is you |
 
 Pick the path that matches how you work. Then go back to the [30-minute start](README.md#start-here-30-minutes).
 

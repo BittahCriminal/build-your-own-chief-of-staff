@@ -20,7 +20,7 @@ Write a markdown prompt file with exactly these sections:
 One or two sentences.
 
 ## Inputs
-A checklist of what must be in front of the agent (files, a date range, a transcript, a ticket list). Mark each required or optional.
+A checklist of what must be in front of the agent. For each item, name the system of record from my `sources.md` (or ask me if that file has no row). Mark each required or optional. Do not invent Outlook vs Gmail vs Jira.
 
 ## Steps
 Numbered. The order I already use, made explicit. Include "read my context files first" if this job depends on who I am or what this quarter's priorities are.
