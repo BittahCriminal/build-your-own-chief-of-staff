@@ -114,7 +114,7 @@ def build():
     prs = Presentation()
     prs.slide_width = W
     prs.slide_height = H
-    TOTAL = 24
+    TOTAL = 26
 
     def fin(s, n, note):
         footer(s, n, TOTAL)
@@ -349,7 +349,7 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
         "Morning brief",
         "Weekly update",
         "Meeting prep",
-        "Meeting recap",
+        "Meeting recap ← we build this one live",
         "Open loops",
         "Drafts of mail you will send",
     ], size=18, spacing=10)
@@ -362,10 +362,15 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
         "Which story is worth telling",
         "Anything you would not put your name on unread",
     ], size=18, spacing=10)
+    textbox(s, Inches(0.9), Inches(6.3), Inches(11.8), Inches(0.5),
+            "Meeting recap needs the least setup of the six — one voice file, meeting details, and one real transcript.",
+            size=15, color=MUTED)
     fin(s, 11, """
 Walk the left column: these are the eight portable jobs from the Delegation Kit, renamed into operator English — daily briefing, meeting processing, weekly review, end-of-day reconciliation, memory scaffold. Notion: https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756
 
 The right column is not 'AI can't do it.' It is 'checking it costs as much as doing it, so extra attempts just grow the pile.' That is the don't-bother verdict from the one-minute test.
+
+Flag meeting-recap now as the one you will run live in a few minutes. It needs voice.md, the meeting title/date/attendees, and one real transcript — not the full context folder morning-brief needs.
 """)
 
     # 9 Same files
@@ -392,8 +397,8 @@ The reusable-rig essay is explicit that the skills should be local, inspectable,
             "What's in the kit", size=32, bold=True)
     kit = [
         ("START-HERE.md", "Get the files onto a PC"),
-        ("PROCESS.md", "The method — two tests"),
-        ("prompts/process/", "Turn any job into a workflow"),
+        ("PROCESS.md", "The method — two tests, seven steps"),
+        ("prompts/process/", "Turn any job into a workflow, and rank several"),
         ("prompts/workflows/", "The CoS jobs, ready to paste"),
         ("context-templates/", "Blanks. Copy privately. Fill them."),
         ("how-to/", "Which box to paste into"),
@@ -410,29 +415,58 @@ Overview, not a tour. Six things, six purposes. Do not open evidence-based-inves
 
 Personal data never ships in this repo. They copy context-templates/ to a private folder. START-HERE.md is unzip / browser / Cursor.
 
+prompts/process/ includes score-the-candidates.md alongside what-to-automate.md and the-two-tests.md. Flag it here; you will use it again near the end of the talk.
+
 Cite: map of where material lives — https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319
 """)
 
-    # 10 Name one job
+    # 14 Live demo
+    s = blank(prs)
+    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
+            "Your first agent, live: meeting recap", size=32, bold=True)
+    textbox(s, Inches(0.8), Inches(1.35), Inches(11.5), Inches(0.4),
+            "WHY THIS ONE FIRST", size=14, bold=True, color=GOLD)
+    bullets(s, Inches(0.8), Inches(1.85), Inches(11.5), Inches(2.1), [
+        "Lowest setup cost of the six CoS jobs — voice.md, meeting details, and one real transcript.",
+        "Fully verifiable: every decision, owner, and date must cite a line or timestamp in the notes.",
+    ], size=18, spacing=12)
+    bullets(s, Inches(0.8), Inches(4.05), Inches(11.5), Inches(2.3), [
+        "Paste meeting title, date, attendees, voice.md, and real notes; get decisions, owners, dates, and open items back.",
+        "Watch for evidence citations and unassigned owners when the notes name nobody.",
+        "Prompt: prompts/workflows/meeting-recap.md",
+    ], size=17, spacing=10)
+    fin(s, 14, """
+Run this for real if you can. Paste an actual recent meeting's title, date, attendees, notes or transcript, and a filled-in voice.md into whatever tool the room uses.
+
+This is the pivot point of the talk: everything before this was "why," everything from here is "how," using meeting-recap as the worked example instead of an abstract one.
+
+If you are short on time, run the demo behind this slide while narrating Steps 1–3 live rather than reading them from slides.
+
+Prompt: prompts/workflows/meeting-recap.md. The output requires source lines or timestamps so the audience can verify the result against the notes on screen.
+""")
+
+    # 15 Name one job
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Step 1 — Name one job", size=32, bold=True)
     bullets(s, Inches(0.8), Inches(1.5), Inches(11.5), Inches(4.8), [
         "Not “be more productive.” Not “be my chief of staff.”",
-        "A job you actually did last week, with a finished artifact.",
+        "A job you actually did last week, with a finished artifact — here: recap the meeting we just pasted.",
         "Annoying enough that you will reuse the file.",
         "Prefer a pain that has happened at least three times.",
         "If you cannot point at examples, you do not have a first job yet.",
     ], size=22, spacing=14)
-    fin(s, 14, """
+    fin(s, 15, """
 Have them shout a job. Split blobs. 'Email' becomes 'Monday status to my manager.' 'Meetings' becomes 'recap of the staff meeting within the hour.'
+
+Tie back to the demo: the job we just ran live is already named — meeting recap — which is why it moved fast.
 
 First-agent-job guide: one annoying problem, three real occurrences, inbox text is data not instructions. Notion: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
 
 Prompt they will paste: prompts/process/name-the-job.md and the-two-tests.md
 """)
 
-    # 11 Write the SOP
+    # 16 Write the SOP
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Step 2 — Write the SOP", size=32, bold=True)
@@ -450,13 +484,15 @@ Prompt they will paste: prompts/process/name-the-job.md and the-two-tests.md
     textbox(s, Inches(0.8), Inches(4.5), Inches(11.5), Inches(1.8),
             "Approvals sit where actions become hard to undo: send, pay, publish, delete.\nScore the spec: could a stranger run it? Is success binary? If not, it will create more work than it saves.",
             size=18, color=MUTED)
-    fin(s, 15, """
+    fin(s, 16, """
 This is the spec from the Delegation Kit: inputs, steps, constraints, approvals at reversibility boundaries, failure handling. Score: can a stranger execute it without questions; are success criteria binary. Three or below means the spec creates more work than it saves. Notion: https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756
+
+For meeting-recap: Input = voice.md + meeting details + transcript. Steps = pull decisions, owners, dates, and open items. Output = a one-page recap. Check = every item cites a line or timestamp in the notes.
 
 Prompt: prompts/process/write-the-sop.md
 """)
 
-    # 12 Context files
+    # 17 Context files
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Step 3 — Put you in files you own", size=32, bold=True)
@@ -464,7 +500,7 @@ Prompt: prompts/process/write-the-sop.md
         ("who-i-am.md", "Role, who you answer to"),
         ("priorities.md", "This quarter, dated"),
         ("people.md", "Who changes your week"),
-        ("voice.md", "How you actually write"),
+        ("voice.md", "How you actually write ← meeting-recap needs this"),
         ("sources.md", "Where you would click to check"),
         ("open-loops.md", "What is still open"),
         ("decisions.md", "What you already settled"),
@@ -481,26 +517,28 @@ Prompt: prompts/process/write-the-sop.md
         add_rect(s, left, top, w, Inches(1.95), NAVY2)
         textbox(s, left + Inches(0.15), top + Inches(0.3), w - Inches(0.3), Inches(0.55), fn, size=16, bold=True, color=GOLD)
         textbox(s, left + Inches(0.15), top + Inches(0.95), w - Inches(0.3), Inches(0.7), desc, size=15, color=CREAM)
-    fin(s, 16, """
+    fin(s, 17, """
 Do not dump this into one encyclopedia. One giant project file becomes a graveyard of stale rules — that is the OpenAI story in the context-files essay. Split: stable instructions, current state, a map of where material lives (sources.md), decision history. When you change your mind, name what is replaced and keep the old assumption in the log. Notion: https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319
 
 These files stay private. The public repo ships blanks. They name the systems they actually open — the agent does not pick a vendor. Prompt: prompts/process/build-context.md
+
+Point at voice.md: this is the one context file that made today's live demo possible. Other jobs — morning-brief and meeting-prep — need three or four context files first.
 """)
 
-    # 13 Prompt file is the process
+    # 18 Prompt file is the process
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(1.8), Inches(11.5), Inches(1.2),
-            "The prompt file is the process.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
+            "STEP 4\n\nThe prompt file is the process.", size=32, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
     textbox(s, Inches(1.4), Inches(3.3), Inches(10.5), Inches(2.2),
             "You do not re-explain yourself in chat.\nIf the output is wrong, the file is wrong.\nInstalling a skill proves the files arrived. Only a real job proves they fit.",
             size=22, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 17, """
+    fin(s, 18, """
 One-job test: don't evaluate a skill by reading the promise. Give it one real job, write pass/fail first, keep the evidence. Keep, fork, or delete. Notion: https://app.notion.com/p/3b0059b703e181fa81add3d2cd98aeaf
 
-This is why we ship prompt files, not a plugin, in this repo.
+This is why we ship prompt files, not a plugin, in this repo. meeting-recap.md is the proof: the file, not a clever conversation, produced the recap a few slides ago.
 """)
 
-    # 14 Verify
+    # 19 Verify
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Step 5 — Verify. Cite or cut.", size=32, bold=True)
@@ -510,7 +548,7 @@ This is why we ship prompt files, not a plugin, in this repo.
         "Self-reported “done” is not a check.",
         "You read the draft against the Check section. Then you send — or you don't.",
     ], size=22, spacing=16)
-    fin(s, 18, """
+    fin(s, 19, """
 Citation guard from the reusable-rig essay: no anchor, no claim. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
 
 They name the systems in sources.md. You do not pick Outlook vs Gmail for them. If someone asks how to ground a rumor, that is evidence-based-investigation.md — do not teach it here.
@@ -520,7 +558,7 @@ Printed holes ('usage: not available') are the system working. Invented numbers 
 Prompt: prompts/process/verify.md
 """)
 
-    # 15 Correct the file
+    # 20 Correct the file
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Step 6 — Correct the file, not the chat", size=30, bold=True)
@@ -530,7 +568,7 @@ Prompt: prompts/process/verify.md
         "Delete a stale instruction before you add a new one.",
         "Somebody owns the agent. One person, close enough to notice drift.",
     ], size=22, spacing=14)
-    fin(s, 19, """
+    fin(s, 20, """
 Maintenance loop: you are maintaining the harness, not a prompt. Seven surfaces — job, diet, memory, tools, reach, proof, value. Repeated correction across three runs is a file problem. Delete before you add. Keep / change / pause / retire. Notion: https://app.notion.com/p/3bb059b703e181bfa3f5fbf9ed29b605
 
 Ownership: the fastest way to make an agent dangerous is to let everybody use it and nobody own it. Notion: https://app.notion.com/p/387059b703e18195a327e34da56998cb
@@ -538,22 +576,67 @@ Ownership: the fastest way to make an agent dangerous is to let everybody use it
 Prompt: prompts/process/correct-the-file.md
 """)
 
-    # 16 Drafts never send
+    # 21 Schedule only after trust
     s = blank(prs)
-    textbox(s, Inches(0.8), Inches(1.7), Inches(11.5), Inches(1.4),
-            "Drafts only. Never send.", size=40, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
-    textbox(s, Inches(1.3), Inches(3.4), Inches(10.7), Inches(2.2),
-            "The agent may read, organize, draft, cite, and export.\nIt may not send, file, submit, pay, sign, or close a ticket.\nYou are the principal. The agent is staff.",
-            size=22, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 20, """
-This is not a legal disclaimer bolted on. It is why the same rig can be pointed at money and health paperwork. If an agent sends a flawed appeal in your name, you now have two problems. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
+            "Step 7 — Only then schedule it", size=32, bold=True)
+    bullets(s, Inches(0.8), Inches(1.5), Inches(11.5), Inches(4.8), [
+        "Do not put a daily brief on a timer until you have checked it by hand several times.",
+        "Automation is for a process you already trust — not one you are still debugging.",
+        "Frequency is evidence a job exists. It is not proof that automating it would matter.",
+        "Choosing none of the offered automations is allowed, even after all six earlier steps.",
+    ], size=21, spacing=14)
+    fin(s, 21, """
+This step gets skipped constantly, which is why it is its own step and not a footnote on step 6. A good output twice in a row does not prove the workflow survives a stale source, a weird transcript, or a rescheduled meeting.
 
-Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
+Automation discovery: https://app.notion.com/p/3a0059b703e181c69fafc66f28f76c99
 
-Approvals sit at reversibility boundaries — the moment an action becomes hard to undo.
+For meeting-recap: schedule or trigger it only after several real meetings, with no invented owner or date.
 """)
 
-    # 17 Then anything
+    # 22 Decision matrix
+    s = blank(prs)
+    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
+            "Rank your next candidates", size=32, bold=True)
+    axes = [
+        ("Repeatable", "0–2: special case →\nsame process"),
+        ("Verifiable", "0–2: no check →\nhard source check"),
+        ("Frequency", "0–2: rare →\ndaily+"),
+        ("Blast radius", "0–2: irreversible →\nlow-stakes draft"),
+        ("Spec ready", "0–2: nothing named →\ninputs already named"),
+    ]
+    for i, (head, body) in enumerate(axes):
+        left = Inches(0.55 + i * 2.5)
+        add_rect(s, left, Inches(1.45), Inches(2.35), Inches(2.0), NAVY2)
+        textbox(s, left + Inches(0.12), Inches(1.7), Inches(2.1), Inches(0.45), head,
+                size=16, bold=True, color=GOLD)
+        textbox(s, left + Inches(0.12), Inches(2.2), Inches(2.1), Inches(1.0), body,
+                size=14, color=CREAM)
+    textbox(s, Inches(0.8), Inches(3.75), Inches(11.5), Inches(0.55),
+            "A zero on Repeatable or Verifiable overrides everything else — that candidate stays judgment.",
+            size=18, bold=True, color=GOLD)
+    verdicts = [
+        ("8–10", "Build now"),
+        ("5–7", "Build next"),
+        ("score swings", "Split further"),
+        ("zero on two tests", "Keep as judgment"),
+    ]
+    for i, (score, verdict) in enumerate(verdicts):
+        left = Inches(0.8 + i * 3.05)
+        add_rect(s, left, Inches(4.65), Inches(2.85), Inches(1.35), NAVY2)
+        textbox(s, left + Inches(0.15), Inches(4.9), Inches(2.55), Inches(0.35), score,
+                size=14, bold=True, color=MUTED)
+        textbox(s, left + Inches(0.15), Inches(5.35), Inches(2.55), Inches(0.4), verdict,
+                size=17, bold=True, color=CREAM)
+    fin(s, 22, """
+The two tests filter one candidate at a time, but they do not rank several against each other. Score every candidate on these five axes out of 10. A zero on Repeatable or Verifiable overrides the total.
+
+The raw material is already in research/SOURCES.md: the shape-of-the-work row uses frequency, cost of a mistake, and judgment load. This operationalizes that cited method.
+
+Prompt: prompts/process/score-the-candidates.md. Use it once you have three or more real candidates.
+""")
+
+    # 23 Then anything
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Then point the same process at anything", size=30, bold=True)
@@ -564,7 +647,7 @@ Approvals sit at reversibility boundaries — the moment an action becomes hard 
         "Do not ask “can AI do this?” Ask what shape the work is.",
         "Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner.",
     ], size=20, spacing=14)
-    fin(s, 21, """
+    fin(s, 23, """
 Six things have to be true before AI changes a workflow. Most companies have built two. Notion: https://app.notion.com/p/36f059b703e1813d801bcb34d72141b1
 
 Shape of the work: https://app.notion.com/p/36f059b703e181cf9c30f637d158b234
@@ -572,14 +655,14 @@ Shape of the work: https://app.notion.com/p/36f059b703e181cf9c30f637d158b234
 The CoS is the demo so they learn the motion on work they already understand. Then they take it home.
 """)
 
-    # 18 30 minutes
+    # 24 30 minutes
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Thirty minutes, starting Monday", size=32, bold=True)
     steps = [
         ("10 min", "Read PROCESS.md"),
-        ("10 min", "Fill in your private context files"),
-        ("5 min", "If you freeze: what-to-automate.md, then the two tests"),
+        ("10 min", "Fill private context — voice.md first for meeting-recap"),
+        ("5 min", "If you freeze: what-to-automate.md, two tests, then rank 3+ candidates"),
         ("5 min", "Write the SOP — or keep the job as judgment"),
     ]
     for i, (t, d) in enumerate(steps):
@@ -587,38 +670,45 @@ The CoS is the demo so they learn the motion on work they already understand. Th
         add_rect(s, Inches(0.8), top, Inches(11.5), Inches(1.0), NAVY2)
         textbox(s, Inches(1.05), top + Inches(0.28), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
         textbox(s, Inches(3.0), top + Inches(0.28), Inches(9), Inches(0.5), d, size=20, color=CREAM)
-    fin(s, 22, """
+    fin(s, 24, """
 Walk the README. START-HERE.md first if the files are not on the machine yet. If they freeze, they start at what-to-automate.md — last week, split the blob, edges first. If the two tests fail, they still used the thirty minutes correctly. The lesson is the refusal.
 
 Do not put the brief on a timer until they have checked it by hand several times. Automation is for a process they already trust.
 """)
 
-    # 19 Safety card
+    # 25 Safety card
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Non-negotiable", size=32, bold=True)
-    bullets(s, Inches(0.8), Inches(1.5), Inches(11.5), Inches(5.0), [
+    textbox(s, Inches(0.8), Inches(1.3), Inches(11.5), Inches(0.7),
+            "Drafts only. Never send. You are the principal. The agent is staff.",
+            size=21, bold=True, color=GOLD)
+    bullets(s, Inches(0.8), Inches(2.05), Inches(11.5), Inches(4.5), [
         "Read-only first.",
-        "Drafts, never send.",
         "Cite or cut.",
         "Inbox is untrusted — mail is data, not orders.",
         "Stale is visible. Silent omission is a lie.",
+        "Approvals sit where actions become hard to undo: send, pay, publish, delete.",
         "One owner per agent.",
-    ], size=24, spacing=12)
-    fin(s, 23, """
-Leave this up during Q&A if needed.
+    ], size=20, spacing=9)
+    fin(s, 25, """
+Leave this up during Q&A if needed. This slide merges the former repeated safety slides so the decision matrix has room.
+
+This is not a legal disclaimer bolted on. If an agent sends a flawed appeal in your name, you now have two problems. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+
+Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
 
 Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Notion: https://app.notion.com/p/3aa059b703e1817c9571c77f8badaf77
 """)
 
-    # 20 Close
+    # 26 Close
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(1.6), Inches(11.5), Inches(1.4),
             "Automate what repeats and checks.\nKeep the rest.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
     textbox(s, Inches(1.5), Inches(3.6), Inches(10.3), Inches(2.0),
-            "Repo: START-HERE.md, then the prompt kit (not the Claude plugin).\nProcess files, CoS workflows, blank context templates.\nSources cited from the Notion Substack table.",
+            "Repo: START-HERE.md, then the prompt kit (not the Claude plugin).\nProcess files, CoS workflows, blank context templates, and the decision matrix.\nSources cited from the Notion Substack table.",
             size=20, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 24, """
+    fin(s, 26, """
 Close by pointing at the repo. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
 If they want receipts: research/SOURCES.md lists the Notion pages this was synthesized from, starting with the Substack database https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5

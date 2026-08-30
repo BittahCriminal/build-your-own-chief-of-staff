@@ -1,6 +1,8 @@
 # Slides
 
-Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx)
+Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (26 slides).
+
+Run of show: [TALK-FLOW.md](../TALK-FLOW.md) includes the 15- and 30-minute paths and live-demo preparation.
 
 Rebuild (needs `python-pptx`):
 

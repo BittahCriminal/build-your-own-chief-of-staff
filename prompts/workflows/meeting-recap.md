@@ -20,13 +20,13 @@ Optional: `people.md`, `open-loops.md`, `decisions.md` so names and follow-ups m
 Subject: Recap + actions: <meeting> <date>
 
 Decisions:
-- <decision> (decided by <who>)
+- <decision> (decided by <who>) [source: <line or timestamp>]
 
 Actions:
-- <owner>: <action> — by <date>
+- <owner>: <action> — by <date> [source: <line or timestamp>]
 
 Open items:
-- <item> — owner <who or "unassigned">, revisit <when>
+- <item> — owner <who or "unassigned">, revisit <when> [source: <line or timestamp>]
 
 Corrections welcome by <date>, then this stands as the record.
 ```
@@ -34,7 +34,7 @@ Corrections welcome by <date>, then this stands as the record.
 Also return, separately, the rows to append to `open-loops.md` / `decisions.md` if I approve.
 
 ## Check
-- Every decision/action cites a line in the notes or transcript I can point at.
+- Every decision, action, and open item cites a line or timestamp in the notes or transcript I can point at.
 - No owner was invented. Unassigned stays unassigned.
 - Tone matches `voice.md`.
 - I still send it.

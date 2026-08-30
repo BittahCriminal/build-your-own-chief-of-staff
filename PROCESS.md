@@ -25,6 +25,8 @@ Do not let the model pick the problem *and* build it. That hides the judgment ca
 
 Paste [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md). It walks last week → split the blob → edge vs core → the two tests → one fast win.
 
+If that leaves you with three or more candidates, use [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md) before writing an SOP. It ranks the jobs by repeatability, verifiability, frequency, blast radius, and whether their inputs are already named. A zero on either of the two tests still overrides the total. This operationalizes the frequency, mistake-cost, and judgment-load classification in [shape of the work](https://app.notion.com/p/36f059b703e181cf9c30f637d158b234); it does not replace the human choice.
+
 ## Why this work fails
 
 From the same table, the stall is almost never “we needed a smarter model” ([ChatGPT-5 won’t save you](https://app.notion.com/p/36f059b703e1818fa542e8696353ebb9)).
