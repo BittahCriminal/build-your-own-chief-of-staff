@@ -35,17 +35,23 @@ It is also the cleanest demonstration of "verifiable": every decision, owner, an
 | **Live demo** | **14** | **~3–4 min** | **Paste voice.md + meeting details + real notes into meeting-recap.md live. Let the room watch the cited draft come back.** |
 | How | 15–21 | ~9 min | Steps 1–7, using the demo you just ran as the running example on each slide |
 | Generalize | 22–23 | ~3 min | Decision matrix for ranking multiple candidate jobs, then "point the same process at anything" |
-| Close | 24–26 | ~3 min | Thirty-minute homework path, non-negotiable safety rules, close |
+| Close | 24–26 | ~3 min | Thirty-minute first run (meeting-recap on their own meeting), non-negotiable safety rules, close with URL + QR |
 
 ## 15-minute core path
 
-Cut to these 16 slides; skip the rest or mention them only if asked:
+This is a teaser, not the 30-minute talk compressed. Seven slides, one live run, one thing to do Monday. Everything else is skipped, not summarized.
 
-1, 4, 7, 8, 10, 11, **14 (live demo)**, 15, 17, 18, 19, 20, 22 (decision matrix), 23, 25, 26
+| Slide | Time | Beat |
+| --- | --- | --- |
+| 1 | 1 min | Title. Process, not a vendor. |
+| 4 | 2 min | The two tests: repeatable, verifiable. |
+| 11 | 2 min | The CoS split: operational vs. judgment. Flag meeting-recap as the one you are about to run. |
+| **14** | **4–5 min** | **Live meeting-recap run.** Narrate Inputs → Steps → Output → Check from the actual paste-in and result. |
+| 19 | 2 min | Verify: cite or cut. Point at one citation and one unassigned owner in the output you just got. |
+| 24 | 2 min | The thirty-minute take-home: the same run, on their own meeting, Monday. |
+| 26 | 1 min | Close: URL and QR to `START-HERE.md`. |
 
-What this drops: the "not a vendor talk" contrast slide (3), the repeatable/verifiable example slides (5, 6), why-it-fails detail (9), the tool-agnostic grid (12), the kit map (13), step 2's SOP breakdown (16), step 7's scheduling slide (21 — mention it verbally as "and only then schedule it" instead), and the 30-minute homework breakdown (24, mention verbally).
-
-Narrate the live demo (slide 14) a little longer in the 15-minute version — since you're skipping the SOP-anatomy slide (16), use the demo itself to show Inputs → Steps → Output → Check by walking the actual paste-in and result instead of the card slide.
+Say two things out loud instead of showing them: drafts only, never send (slide 25); and only put it on a timer after several hand-checked runs (slide 21). If someone leaves with three ideas instead of one, point them at [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); the decision matrix (slide 22) is not in this path.
 
 ## If the live demo doesn't cooperate
 

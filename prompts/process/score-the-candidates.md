@@ -18,7 +18,7 @@ For each candidate, score five axes, 0–2, using only what I tell you. Do not g
 2. **Verifiable** — 0: no check I can name. 1: a soft check ("does this look right"). 2: a hard check against a named source, template, or yes/no rule.
 3. **Frequency** — 0: rare (less than monthly). 1: weekly. 2: daily or near-daily.
 4. **Blast radius if wrong** — 0: it sends, pays, publishes, or deletes on its own. 1: drafts only, but a bad draft could slip past me before I catch it. 2: drafts only, low stakes, easy for me to catch before anything leaves my hands.
-5. **Spec readiness** — 0: the inputs are not named in `sources.md` or any context file yet. 1: some inputs are named. 2: every input already has a named source I can point at today.
+5. **Spec readiness** — 0: the inputs are not named in `sources.md` or any context file yet, or their reach is `none yet`. 1: some inputs have a named system and a reach method (connector, paste, or attach). 2: every input has both, today.
 
 Then, non-negotiable:
 
@@ -30,6 +30,7 @@ Verdict per candidate:
 
 - **Build now** — 8–10, no zero on Repeatable or Verifiable.
 - **Build next** — 5–7, no zero on Repeatable or Verifiable.
+- **Not yet** — 2–4, no zero on Repeatable or Verifiable: passes both tests, but too rare, too risky, or too unspecified to be worth the setup. Revisit when frequency or spec readiness changes.
 - **Split further** — the score swings wildly depending on which sub-part I'm thinking of; it's a blob, not one job.
 - **Keep as judgment** — zero on Repeatable or Verifiable, regardless of total.
 
@@ -43,7 +44,7 @@ Candidates scored:
 
 Build now: <the single highest-scoring "Build now" candidate, or "none scored high enough">
 Why this one, not the others: <one sentence, tied to the scores, not a vibe>
-Everything else: <one line each — build next / split further / keep as judgment>
+Everything else: <one line each — build next / not yet / split further / keep as judgment>
 Next step: [write-the-sop.md](write-the-sop.md) for the winner
 ```
 

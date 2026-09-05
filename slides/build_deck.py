@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Build the follow-along talk deck. Non-technical. Speaker notes cite Notion."""
 
+from io import BytesIO
 from pathlib import Path
 
+import qrcode
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
@@ -20,6 +22,9 @@ NAVY = BLACK
 NAVY2 = CARD
 
 W, H = Inches(13.333), Inches(7.5)
+
+REPO = "https://github.com/BittahCriminal/build-your-own-chief-of-staff"
+START_HERE = REPO + "/blob/main/START-HERE.md"
 
 
 def set_run(run, size=20, bold=False, color=CREAM, font="Calibri"):
@@ -618,18 +623,21 @@ For meeting-recap: schedule or trigger it only after several real meetings, with
     verdicts = [
         ("8–10", "Build now"),
         ("5–7", "Build next"),
+        ("2–4", "Not yet"),
         ("score swings", "Split further"),
         ("zero on two tests", "Keep as judgment"),
     ]
     for i, (score, verdict) in enumerate(verdicts):
-        left = Inches(0.8 + i * 3.05)
-        add_rect(s, left, Inches(4.65), Inches(2.85), Inches(1.35), NAVY2)
-        textbox(s, left + Inches(0.15), Inches(4.9), Inches(2.55), Inches(0.35), score,
+        left = Inches(0.55 + i * 2.5)
+        add_rect(s, left, Inches(4.65), Inches(2.35), Inches(1.35), NAVY2)
+        textbox(s, left + Inches(0.12), Inches(4.9), Inches(2.1), Inches(0.35), score,
                 size=14, bold=True, color=MUTED)
-        textbox(s, left + Inches(0.15), Inches(5.35), Inches(2.55), Inches(0.4), verdict,
-                size=17, bold=True, color=CREAM)
+        textbox(s, left + Inches(0.12), Inches(5.3), Inches(2.1), Inches(0.6), verdict,
+                size=16, bold=True, color=CREAM)
     fin(s, 22, """
 The two tests filter one candidate at a time, but they do not rank several against each other. Score every candidate on these five axes out of 10. A zero on Repeatable or Verifiable overrides the total.
+
+"Not yet" is the honest middle: it passes both tests but is too rare, too risky, or too unspecified to be worth the setup this month. Park it and revisit when frequency or spec readiness changes. It is not a polite "keep as judgment."
 
 The raw material is already in research/SOURCES.md: the shape-of-the-work row uses frequency, cost of a mistake, and judgment load. This operationalizes that cited method.
 
@@ -658,22 +666,32 @@ The CoS is the demo so they learn the motion on work they already understand. Th
     # 24 30 minutes
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "Thirty minutes, starting Monday", size=32, bold=True)
+            "Thirty minutes on Monday: run meeting-recap once", size=28, bold=True)
     steps = [
-        ("10 min", "Read PROCESS.md"),
-        ("10 min", "Fill private context — voice.md first for meeting-recap"),
-        ("5 min", "If you freeze: what-to-automate.md, two tests, then rank 3+ candidates"),
-        ("5 min", "Write the SOP — or keep the job as judgment"),
+        ("5 min", "Copy context-templates to a private folder. Fill in voice.md only."),
+        ("5 min", "Pick one real meeting from last week: title, date, attendees, notes."),
+        ("5 min", "Paste meeting-recap.md, voice.md, and the notes into your tool. Run it."),
+        ("10 min", "Check each owner and date against a line in the notes. No name? Unassigned."),
+        ("5 min", "Wrong? Fix the prompt or voice.md, not the chat. Run it again."),
     ]
     for i, (t, d) in enumerate(steps):
-        top = Inches(1.5 + i * 1.15)
-        add_rect(s, Inches(0.8), top, Inches(11.5), Inches(1.0), NAVY2)
-        textbox(s, Inches(1.05), top + Inches(0.28), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
-        textbox(s, Inches(3.0), top + Inches(0.28), Inches(9), Inches(0.5), d, size=20, color=CREAM)
+        top = Inches(1.45 + i * 0.98)
+        add_rect(s, Inches(0.8), top, Inches(11.5), Inches(0.85), NAVY2)
+        textbox(s, Inches(1.05), top + Inches(0.2), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
+        textbox(s, Inches(3.0), top + Inches(0.2), Inches(9.1), Inches(0.6), d, size=17, color=CREAM)
+    textbox(s, Inches(0.8), Inches(6.45), Inches(11.5), Inches(0.5),
+            "Froze on picking a meeting? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
+            size=15, color=MUTED)
     fin(s, 24, """
-Walk the README. START-HERE.md first if the files are not on the machine yet. If they freeze, they start at what-to-automate.md — last week, split the blob, edges first. If the two tests fail, they still used the thirty minutes correctly. The lesson is the refusal.
+This mirrors the README "Start here" path, but the deliverable is one real run, not a reading list. START-HERE.md first if the files are not on the machine yet. They already watched this exact run on slide 14; Monday they do it on their own meeting.
 
-Do not put the brief on a timer until they have checked it by hand several times. Automation is for a process they already trust.
+Line 4 is the whole lesson. An owner or date that does not point at a line in the notes gets cut. If the notes name nobody, the recap says unassigned. That is the agent working, not failing.
+
+Line 5 is step 6 in miniature: correct the file, not the chat. Three of the same correction is a rule.
+
+If they freeze, what-to-automate.md — last week, split the blob, edges first. If they leave with three ideas instead of one, score-the-candidates.md. If the two tests fail on their job, they still used the thirty minutes correctly.
+
+Do not put the recap on a timer until they have checked it by hand several times. Automation is for a process they already trust.
 """)
 
     # 25 Safety card
@@ -703,19 +721,28 @@ Where the agent should stop: start where a colleague or customer already tells y
 
     # 26 Close
     s = blank(prs)
-    textbox(s, Inches(0.8), Inches(1.6), Inches(11.5), Inches(1.4),
+    textbox(s, Inches(0.8), Inches(0.9), Inches(11.5), Inches(1.4),
             "Automate what repeats and checks.\nKeep the rest.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
-    textbox(s, Inches(1.5), Inches(3.6), Inches(10.3), Inches(2.0),
-            "Repo: START-HERE.md, then the prompt kit (not the Claude plugin).\nProcess files, CoS workflows, blank context templates, and the decision matrix.\nSources cited from the Notion Substack table.",
-            size=20, color=CREAM, align=PP_ALIGN.CENTER)
+    textbox(s, Inches(0.8), Inches(3.1), Inches(8.6), Inches(0.5), "START HERE", size=14, bold=True, color=GOLD)
+    textbox(s, Inches(0.8), Inches(3.55), Inches(9.0), Inches(0.6),
+            REPO.removeprefix("https://"), size=20, bold=True, color=CREAM)
+    textbox(s, Inches(0.8), Inches(4.35), Inches(8.6), Inches(1.6),
+            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, the decision matrix.\nSources cited from the Notion Substack table.",
+            size=17, color=MUTED)
+    qr = BytesIO()
+    qrcode.make(START_HERE).save(qr)
+    s.shapes.add_picture(qr, Inches(9.9), Inches(3.1), Inches(2.4), Inches(2.4))
+    textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
+            "scan: START-HERE.md", size=12, color=MUTED, align=PP_ALIGN.CENTER)
     fin(s, 26, """
-Close by pointing at the repo. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
+Close by pointing at the repo. The QR resolves to START-HERE.md on GitHub; the URL next to it is the repo root. Say the URL out loud once for anyone who cannot scan. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
 If they want receipts: research/SOURCES.md lists the Notion pages this was synthesized from, starting with the Substack database https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5
 
 Offer to stay for the first job. Help them run the two tests live on something they did last week.
 """)
 
+    assert len(prs.slides) == TOTAL, len(prs.slides)
     out = Path(__file__).resolve().parent / "building-your-own-chief-of-staff.pptx"
     prs.save(out)
     print(f"Wrote {out} ({TOTAL} slides)")
