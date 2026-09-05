@@ -10,3 +10,4 @@ Get the kit on disk first ([START-HERE.md](../START-HERE.md)). Then:
 6. Run. Read the draft. You send.
 
 Do not enable Copilot to send mail, close issues, or push without you looking.
+To schedule recurring runs (in M365 Copilot): see [schedule.md](schedule.md) (only after 3 manual verify passes).

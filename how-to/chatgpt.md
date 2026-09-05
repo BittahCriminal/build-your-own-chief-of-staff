@@ -9,3 +9,4 @@ No disk required. See [START-HERE.md](../START-HERE.md) path 1.
 5. Run. Read the draft. You send.
 
 Turn off any "take action / send email" connector for these workflows. Drafts only.
+To schedule recurring runs: see [schedule.md](schedule.md) (only after 3 manual verify passes).

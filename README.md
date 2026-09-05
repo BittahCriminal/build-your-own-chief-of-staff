@@ -21,7 +21,7 @@ These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, Cha
 2. Fill in the **private** context folder (not `context-templates/` in this repo). For the fastest first run, start with `voice.md`, then bring one meeting's title, date, attendees, and notes to [`meeting-recap.md`](prompts/workflows/meeting-recap.md). Add the other context files as later workflows require them (10 min).
 3. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win. If you have three or more candidates, rank them with [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md) (5 min).
 4. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
-5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat.
+5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat. After three clean passes, package recurring jobs with [`prompts/process/schedule-it.md`](prompts/process/schedule-it.md) (see [`how-to/schedule.md`](how-to/schedule.md)).
 
 Where to paste, by tool: [`how-to/`](how-to/).
 
@@ -51,10 +51,10 @@ It does not send email, change tickets, or act on instructions found inside an i
 ```
 START-HERE.md              get the kit onto a PC or workstation (read this first)
 PROCESS.md                 the method
-prompts/process/           how to turn any job into a workflow (includes bring-it-home)
+prompts/process/           how to turn any job into a workflow (includes bring-it-home, schedule-it)
 prompts/workflows/         Chief of Staff jobs, as copy-paste prompts
 context-templates/         blanks to copy into a *private* folder
-how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini
+how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini, and scheduling
 slides/                    the presentation
 research/                  Notion-cited sources this kit was synthesized from
 ```

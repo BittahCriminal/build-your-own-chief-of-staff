@@ -10,3 +10,4 @@ Get the kit on disk first ([START-HERE.md](../START-HERE.md)). Then:
 6. Run. Read the draft. You send.
 
 Keep Agent in read-only or ask it to write files you will review. Do not let it send mail, close tickets, or push on the first run.
+To schedule recurring runs: see [schedule.md](schedule.md) (only after 3 manual verify passes).

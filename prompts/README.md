@@ -17,6 +17,7 @@ Then, in this order:
 7. [verify.md](process/verify.md)
 8. [evidence-based-investigation.md](process/evidence-based-investigation.md) — when a draft was built on second-hand or remembered facts and needs grounding, not a rewrite
 9. [correct-the-file.md](process/correct-the-file.md) — when you had to fix the draft
+10. [schedule-it.md](process/schedule-it.md) — package a verified workflow into a tool schedule wrapper (only after three clean verify passes)
 
 If a project already died: [diagnose-the-stall.md](process/diagnose-the-stall.md).
 

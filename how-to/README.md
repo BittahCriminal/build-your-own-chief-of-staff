@@ -11,5 +11,6 @@ Get the kit onto the machine first: [`../START-HERE.md`](../START-HERE.md).
 | Claude | [claude.md](claude.md) |
 | ChatGPT | [chatgpt.md](chatgpt.md) |
 | Gemini | [gemini.md](gemini.md) |
+| Scheduling across tools | [schedule.md](schedule.md) |
 
 If your tool is not listed: open a new chat, paste the prompt file, attach your private context folder, run. Do not grant send / delete / pay permissions on the first run.

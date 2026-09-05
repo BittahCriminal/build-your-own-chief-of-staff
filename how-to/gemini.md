@@ -8,3 +8,4 @@ No disk required. See [START-HERE.md](../START-HERE.md) path 1.
 4. Run. Read the draft. You send.
 
 If Gemini offers to send the email or update the calendar for you, decline. Copy the draft out yourself.
+To schedule recurring runs: see [schedule.md](schedule.md) (only after 3 manual verify passes).

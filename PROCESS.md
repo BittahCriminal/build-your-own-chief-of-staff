@@ -99,6 +99,14 @@ Somebody has to own the agent ([ownership](https://app.notion.com/p/387059b703e1
 
 Do not put a daily brief on a timer until you have checked it by hand several times. Automation is for a process you already trust. Frequency is evidence that a job exists, not proof that automating it would matter ([automation discovery](https://app.notion.com/p/3a0059b703e181c69fafc66f28f76c99)). Choosing **none** of the offered automations is allowed.
 
+When you are ready to automate a recurring workflow, follow three rules before touching a scheduler:
+
+1. **The three-pass gate.** A workflow must pass [`prompts/process/verify.md`](prompts/process/verify.md) at least three times manually before scheduling. Self-scheduling hides the hand-check gate; scheduling an uninspected prompt automates errors.
+2. **Context goes stale inside the task.** In-app schedulers snapshot prompt text when created. When `priorities.md` changes next quarter, the background task does not know. Every schedule wrapper must carry an explicit review date (max 90 days), inline only trimmed context, and instruct the model to declare what context version it is running on.
+3. **"Scheduled" is a claim about the world.** The model saying "done, scheduled" in chat is the false-success trap ([false success](https://app.notion.com/p/3b5059b703e1819fbd41c6ba9658b0c6)). Proof comes from the tool's actual Scheduled page or routine list, not from the transcript.
+
+When a workflow passes its three manual checks, generate the tool-specific schedule wrapper with [`prompts/process/schedule-it.md`](prompts/process/schedule-it.md), log the schedule card in `decisions.md`, and see [`how-to/schedule.md`](how-to/schedule.md).
+
 ## Safety that is not optional
 
 - **Read-only first.** The agent reads mail, calendars, tickets. It does not send, close, delete, or label.

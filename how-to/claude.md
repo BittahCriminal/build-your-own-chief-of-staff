@@ -10,3 +10,4 @@ Works in claude.ai, Claude Desktop, or Claude Code. Same files. Get them first: 
 If you use Claude Code: open the kit folder, paste [`bring-it-home.md`](../prompts/process/bring-it-home.md) once, then point at the markdown files on disk. Still drafts only. Do not grant send / submit / pay tools on the first run.
 
 This kit is not a Claude plugin. The plugin packaging of the same processes is a different repo.
+To schedule recurring runs (Claude Code or Desktop): see [schedule.md](schedule.md) (only after 3 manual verify passes).
