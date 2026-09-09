@@ -25,7 +25,7 @@ These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, Cha
 
 Where to paste, by tool: [`how-to/`](how-to/).
 
-Slides for this talk: [`slides/building-your-own-chief-of-staff.pptx`](slides/building-your-own-chief-of-staff.pptx).
+Slides for this talk: [`slides/building-your-own-chief-of-staff.pptx`](slides/building-your-own-chief-of-staff.pptx). Run of show: [`TALK-FLOW.md`](TALK-FLOW.md) (slides, then GitHub).
 
 ## What an agent is, in this kit
 
@@ -56,6 +56,7 @@ prompts/workflows/         Chief of Staff jobs, as copy-paste prompts
 context-templates/         blanks to copy into a *private* folder
 how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini, and scheduling
 slides/                    the presentation
+TALK-FLOW.md               run of show (15 and 30 min; slides then GitHub)
 research/                  Notion-cited sources this kit was synthesized from
 ```
 

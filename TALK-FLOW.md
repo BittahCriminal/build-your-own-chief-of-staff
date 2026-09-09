@@ -1,6 +1,8 @@
 # Talk flow — 15 vs. 30 minutes
 
-26 slides total. The deck is built to run at 30 minutes with all slides, or 15 minutes on a marked core path. Both versions pivot on the same moment: slide 14, the live meeting-recap demo.
+16 slides. The argument stays on slides. The files live on GitHub. After slide 9 you leave PowerPoint and open the repo; you only come back for the ranking card, Monday homework, and the close.
+
+Both versions pivot on the same moment: slide 11, then a live run of `prompts/workflows/meeting-recap.md` copied from GitHub.
 
 ## Why meeting-recap is the demo
 
@@ -21,37 +23,43 @@ It is also the cleanest demonstration of "verifiable": every decision, owner, an
 
 ## Prep before you present
 
-1. Fill in a real `voice.md` (or a plausible sample one, sanitized) ahead of time.
-2. Have one real meeting's title, date, attendee list, and notes or transcript ready to paste — sanitize names/numbers if needed, but keep it realistic enough that the recap looks like real work, not a toy example.
-3. Have `prompts/workflows/meeting-recap.md` open in a tab, ready to paste into whatever tool you're demoing in.
-4. Do a dry run once beforehand so you know roughly what the output looks like and aren't debugging a prompt live.
+Pre-open four browser tabs. Slides 10–13 are portals with clickable GitHub URLs and a QR; use the tabs so you are not typing mid-talk.
 
-## 30-minute run of show (all 26 slides)
+1. [Repo README](https://github.com/BittahCriminal/build-your-own-chief-of-staff)
+2. [`prompts/workflows/meeting-recap.md`](https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/prompts/workflows/meeting-recap.md)
+3. [`PROCESS.md`](https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/PROCESS.md)
+4. The tool you will demo in (Copilot, Cursor, Claude, ChatGPT, or Gemini), with a filled `voice.md` and one real meeting's title, date, attendees, and notes ready to paste
 
-| Segment | Slides | Time | Beat |
+Also:
+
+- Do a dry run once so you know roughly what the output looks like.
+- Save that dry-run output as a fallback screenshot or a fifth tab.
+
+## 30-minute run of show (16 slides)
+
+| Segment | Where | Time | Beat |
 | --- | --- | --- | --- |
-| Why | 1–10 | ~9 min | Not a vendor talk, the two tests, why people freeze, why projects fail, edges vs. core |
-| Setup | 11–13 | ~3 min | CoS is the teaching case (flag meeting-recap), same markdown/any tool, what's in the kit |
-| **Live demo** | **14** | **~3–4 min** | **Paste voice.md + meeting details + real notes into meeting-recap.md live. Let the room watch the cited draft come back.** |
-| How | 15–21 | ~9 min | Steps 1–7, using the demo you just ran as the running example on each slide |
-| Generalize | 22–23 | ~3 min | Decision matrix for ranking multiple candidate jobs, then "point the same process at anything" |
-| Close | 24–26 | ~3 min | Thirty-minute first run (meeting-recap on their own meeting), non-negotiable safety rules, close with URL + QR |
+| Why | Slides 1–9 | ~10 min | Not a vendor, two tests, freeze, why it fails, edges, CoS split. Flag meeting-recap. |
+| **Open the kit** | **Slide 10 → GitHub README** | **~1 min** | **Click the URL. Point at the six names. Do not tour files.** |
+| **Live demo** | **Slide 11 → `meeting-recap.md` → your tool** | **~4 min** | **Copy the prompt from GitHub. Paste voice.md + meeting details + real notes. Let the room watch the cited draft come back.** |
+| **How** | **Slide 12 → `PROCESS.md`** | **~7 min** | **Walk steps 1–7 on that page, using the recap you just ran. Do not return to slides for each step.** |
+| Rank | Slide 13 → `score-the-candidates.md` if needed | ~2 min | Decision matrix. Open the file only if someone has three ideas. |
+| Close | Slides 14–16 | ~4 min | Monday homework (same recap, their meeting), safety card, URL + QR to `START-HERE.md` |
 
 ## 15-minute core path
 
-This is a teaser, not the 30-minute talk compressed. Seven slides, one live run, one thing to do Monday. Everything else is skipped, not summarized.
+This is a teaser, not the 30-minute talk compressed. Six slides, one GitHub file, one live run, one thing to do Monday. Everything else is skipped, not summarized.
 
-| Slide | Time | Beat |
+| Where | Time | Beat |
 | --- | --- | --- |
-| 1 | 1 min | Title. Process, not a vendor. |
-| 4 | 2 min | The two tests: repeatable, verifiable. |
-| 11 | 2 min | The CoS split: operational vs. judgment. Flag meeting-recap as the one you are about to run. |
-| **14** | **4–5 min** | **Live meeting-recap run.** Narrate Inputs → Steps → Output → Check from the actual paste-in and result. |
-| 19 | 2 min | Verify: cite or cut. Point at one citation and one unassigned owner in the output you just got. |
-| 24 | 2 min | The thirty-minute take-home: the same run, on their own meeting, Monday. |
-| 26 | 1 min | Close: URL and QR to `START-HERE.md`. |
+| Slide 1 | 1 min | Title. Process, not a vendor. |
+| Slide 4 | 2 min | The two tests: repeatable, verifiable. |
+| Slide 9 | 2 min | The CoS split. Flag meeting-recap as the file you are about to open. |
+| **Slide 11 → `meeting-recap.md`** | **5 min** | **Live run. Narrate Inputs → Steps → Output → Check from the actual paste-in and result.** |
+| Slide 14 | 2 min | The thirty-minute take-home: the same run, on their own meeting, Monday. |
+| Slide 16 | 1 min | Close: URL and QR to `START-HERE.md`. |
 
-Say two things out loud instead of showing them: drafts only, never send (slide 25); and only put it on a timer after several hand-checked runs (slide 21). If someone leaves with three ideas instead of one, point them at [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); the decision matrix (slide 22) is not in this path.
+Say three things out loud instead of showing them: drafts only, never send (slide 15); only put it on a timer after several hand-checked runs (`PROCESS.md` step 7); and the method is `PROCESS.md` if they want the seven steps. If someone leaves with three ideas instead of one, point them at [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); the decision matrix (slide 13) is not in this path.
 
 ## If the live demo doesn't cooperate
 
