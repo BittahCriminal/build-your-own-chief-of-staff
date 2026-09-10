@@ -8,3 +8,4 @@ This repo hosts **prompt files**, not an application. Do not add code, plugins, 
 - Every workflow prompt must name its **check**. Drafts only; never send or mutate.
 - Cite the local Markdown source notes cataloged in `research/SOURCES.md` when the method changes. Preserve original article attribution; do not replace it with generic web roundups or private-workspace links.
 - Provider how-tos stay in `how-to/` and stay thin: where to paste, nothing else.
+- Commit authors and committers must be `BittahCriminal <5335837+BittahCriminal@users.noreply.github.com>`. Do not add agent coauthor trailers or generated-by credits.
