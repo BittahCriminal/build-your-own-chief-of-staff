@@ -24,7 +24,7 @@ This table is also the **Inputs half of every SOP** you will write. A job whose 
 - **attach** — you attach a file each run.
 - **none yet** — you want it reachable and it is not. That is a setup task, not a source.
 
-Examples of system names — only if they are actually yours: Outlook, Google Calendar, Teams, Slack, Jira, Linear, Azure DevOps, GitHub Issues, Notion, Confluence, SharePoint, Work IQ, Spark, a spreadsheet. The label is yours. Connecting the tool is not this file's job, and this kit does not install connectors.
+Examples of system names — only if they are actually yours: Outlook, Google Calendar, Teams, Slack, Jira, Linear, Azure DevOps, GitHub Issues, Confluence, SharePoint, Work IQ, Spark, a spreadsheet. The label is yours. Connecting the tool is not this file's job, and this kit does not install connectors.
 
 **Read-only** is the default. If a connector can send, close, edit, or delete, either do not grant that, or write `WRITE-CAPABLE — approvals required` and expect every workflow to stop before that action.
 

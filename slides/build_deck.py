@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the follow-along talk deck. Non-technical. Speaker notes cite Notion."""
+"""Build the follow-along talk deck. Non-technical. Speaker notes cite repo Markdown."""
 
 from io import BytesIO
 from pathlib import Path
@@ -176,7 +176,7 @@ They are leaving with a process they can run Monday in whatever tool they alread
 
 The Chief of Staff agent is the worked example. Briefs, drafts, open loops, meeting prep. The real prize is the two tests they will use on expense reports, hiring screens, and customer research next month.
 
-Cite the source of truth if asked: the author's Substack research table in Notion — https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5 — 879 rows of operator essays. We synthesized from those rows, not from a generic web roundup.
+Cite the local source catalog if asked: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md — 20 Markdown notes documenting the operating rules used in this kit, with original article attribution.
 """)
 
     # 2 Walk away with
@@ -196,7 +196,7 @@ Pause on the third bullet. These are ordinary markdown files. If their IT depart
 
 The context files they fill in privately — who they are, this quarter's priorities, how they write, where truth lives — are the operating system. Swap the vendor tomorrow and nothing important moves. START-HERE.md is how the folder lands on a PC. Do not walk the file tree here — that happens on GitHub in a few minutes.
 
-That claim is from the context-files row in the table (Notion: https://app.notion.com/p/3bb059b703e18152aea0d83b502fa319) and from the delegation kit's memory scaffold (https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756).
+That claim is from the context-files note (Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/context-files.md) and from the delegation kit's memory scaffold (https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md).
 """)
 
     # 3 Not a vendor
@@ -222,7 +222,7 @@ That claim is from the context-files row in the table (Notion: https://app.notio
     fin(s, 3, """
 Say the refusal out loud. 'It replaces your Chief of Staff' is marketing. A human CoS does two kinds of work. Operational: reconstruct context, draft the update, prep the meeting, keep loops from disappearing. Judgment: when to push, how a room will land, which red line you will not cross.
 
-We automate the first. We keep the second. That split is the whole talk, and it is the load-bearing claim in the Delegation Kit row: https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756
+We automate the first. We keep the second. That split is the whole talk, and it is the load-bearing claim in the Delegation Kit note: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md
 """)
 
     # 4 Two tests
@@ -248,9 +248,9 @@ Verifiable: every Done line cites a ticket you can open; the recap names an owne
 
 Fail either test → do not automate. That is not caution. That is the curriculum.
 
-The checkability argument: if checking an answer costs as much as making it, extra attempts just grow the pile. Notion: https://app.notion.com/p/399059b703e18107b20dfe6bb5c32626
+The checkability argument: if checking an answer costs as much as making it, extra attempts just grow the pile. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/agent-shaped-work.md
 
-And: if you cannot name what would make you say 'not yet,' you have a vibe, not a job. Notion: https://app.notion.com/p/36f059b703e18142b351f70732b09c29
+And: if you cannot name what would make you say 'not yet,' you have a vibe, not a job. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/verification-gap.md
 """)
 
     # 5 Fail either
@@ -263,9 +263,9 @@ And: if you cannot name what would make you say 'not yet,' you have a vibe, not 
     fin(s, 5, """
 Let this land. People came hoping to automate the hard conversations. Tell them no, kindly.
 
-The shape-of-the-work briefing: if you automate work that depends on trust and judgment, you break the process at the point where the human mattered most. Notion: https://app.notion.com/p/36f059b703e181cf9c30f637d158b234
+The shape-of-the-work briefing: if you automate work that depends on trust and judgment, you break the process at the point where the human mattered most. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/shape-of-work.md
 
-And from automation discovery: frequency is evidence, not value. Choosing none of the offered automations is allowed. Notion: https://app.notion.com/p/3a0059b703e181c69fafc66f28f76c99
+And from automation discovery: frequency is evidence, not value. Choosing none of the offered automations is allowed. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/let-history-pick.md
 """)
 
     # 6 The freeze
@@ -283,9 +283,9 @@ And from automation discovery: frequency is evidence, not value. Choosing none o
     fin(s, 6, """
 This is the paralysis slide. Stay here until they nod.
 
-Nate's empty-prompt piece: people have a capable agent and keep staring at the box. The first version of automation-discovery let the AI pick and build — he killed that 'magic button' because it hides the judgment call. Offer sheet, then a human chooses. Choosing none is allowed. Frequency is not value. Notion: https://app.notion.com/p/3a0059b703e181c69fafc66f28f76c99
+Nate's empty-prompt piece: people have a capable agent and keep staring at the box. The first version of automation-discovery let the AI pick and build — he killed that 'magic button' because it hides the judgment call. Offer sheet, then a human chooses. Choosing none is allowed. Frequency is not value. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/let-history-pick.md
 
-Idle agents: a social network for agents filled up and sat there. They were never asked to do a single thing. Notion: https://app.notion.com/p/399059b703e18107b20dfe6bb5c32626
+Idle agents: a social network for agents filled up and sat there. They were never asked to do a single thing. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/agent-shaped-work.md
 
 Point them at prompts/process/what-to-automate.md on GitHub later — last week, split the blob, edge vs core, two tests, one fast win.
 """)
@@ -302,12 +302,12 @@ Point them at prompts/process/what-to-automate.md on GitHub later — last week,
         "Waiting for a smarter model. The missing piece was a named job, a source, and an owner.",
     ], size=18, spacing=12)
     fin(s, 7, """
-These are Nate's failure modes from the Substack table, not a generic 'AI projects fail' slide.
+These failure modes come from Nate's essays, summarized in the local source notes below.
 
-Core-first vs edges: https://app.notion.com/p/36f059b703e181d9bd25f984c8bd6945
-Fails at the task level (five jobs pretending to be one): https://app.notion.com/p/36f059b703e181f9afedc637cd6529f4
-False success (wrong spreadsheet, said done): https://app.notion.com/p/3b5059b703e1819fbd41c6ba9658b0c6
-A better model will not save you: https://app.notion.com/p/36f059b703e1818fa542e8696353ebb9
+Core-first vs edges: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/why-agent-projects-fail.md
+Fails at the task level (five jobs pretending to be one): https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/task-decomposition.md
+False success (wrong spreadsheet, said done): https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/false-success.md
+A better model will not save you: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/better-models-wont-fix-the-process.md
 
 The postmortem prompt is diagnose-the-stall.md — they will see it under prompts/process/ on GitHub, not as a slide.
 """)
@@ -336,7 +336,7 @@ Edge-first is the thought process they came for. Data preparation, QA, synthesis
 
 The core is where they groan that they want help — and where first projects die. Trust is the real project: automate around the craft, not through it.
 
-Notion: https://app.notion.com/p/36f059b703e181d9bd25f984c8bd6945
+Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/why-agent-projects-fail.md
 
 CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to push, which story to tell = core.
 """)
@@ -369,7 +369,7 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
             "Meeting recap needs the least setup of the six — one voice file, meeting details, and one real transcript.",
             size=15, color=MUTED)
     fin(s, 9, """
-Walk the left column: these are the eight portable jobs from the Delegation Kit, renamed into operator English. Notion: https://app.notion.com/p/36f059b703e18192a6d8f67fbe74b756
+Walk the left column: these are the eight portable jobs from the Delegation Kit, renamed into operator English. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md
 
 The right column is not 'AI can't do it.' It is 'checking it costs as much as doing it, so extra attempts just grow the pile.'
 
@@ -407,7 +407,7 @@ Click the URL or scan. Stay on the README for about a minute. Point at the six n
 
 Do not take questions about which model is 'best'. Once the job is named and the check exists, use whatever they already pay for. The how-to/ folder is only which box to paste into.
 
-Reusable-rig essay: skills should be local, inspectable, and independent of whichever AI app you are renting this month. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+Reusable-rig essay: skills should be local, inspectable, and independent of whichever AI app you are renting this month. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
 
 Then go to the next slide and open meeting-recap.md. Do not walk PROCESS.md yet.
 """)
@@ -468,11 +468,11 @@ For the recap you just ran:
 2. Input = voice.md + meeting details + transcript. Output = one-page recap. Check = every item cites a line. Prompt: write-the-sop.md
 3. voice.md is the one context file that made the demo possible. Other jobs need more. Prompt: build-context.md
 4. meeting-recap.md produced the recap, not a clever conversation. If output is wrong, the file is wrong.
-5. Citation guard: no anchor, no claim. Gaps stay gaps. Prompt: verify.md  Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+5. Citation guard: no anchor, no claim. Gaps stay gaps. Prompt: verify.md  Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
 6. Three of the same correction is a rule. Two is a candidate. One is a fluke. Prompt: correct-the-file.md
 7. Do not put it on a timer until several hand-checked meetings. Frequency is not value. Prompt: schedule-it.md
 
-Then say: point the same seven steps at expense reports, hiring screens, incident recaps. Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner. Notion: https://app.notion.com/p/36f059b703e1813d801bcb34d72141b1
+Then say: point the same seven steps at expense reports, hiring screens, incident recaps. Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/workflow-readiness.md
 
 Come back to the deck for the ranking card, Monday homework, and the close.
 """)
@@ -571,11 +571,11 @@ Do not put the recap on a timer until they have checked it by hand several times
     fin(s, 15, """
 Leave this up during Q&A if needed.
 
-If an agent sends a flawed appeal in your name, you now have two problems. Notion: https://app.notion.com/p/392059b703e1814b96a6dd9913180844
+If an agent sends a flawed appeal in your name, you now have two problems. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
 
-Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://app.notion.com/p/3bb059b703e1817b9123ff209fcc5d9d
+Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/first-agent-job.md
 
-Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Notion: https://app.notion.com/p/3aa059b703e1817c9571c77f8badaf77
+Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/where-to-stop.md
 """)
 
     # 16 Close
@@ -585,7 +585,7 @@ Where the agent should stop: start where a colleague or customer already tells y
     textbox(s, Inches(0.8), Inches(3.1), Inches(8.6), Inches(0.5), "START HERE", size=14, bold=True, color=GOLD)
     linked_url(s, Inches(0.8), Inches(3.55), Inches(9.0), Inches(0.55), REPO, size=18)
     textbox(s, Inches(0.8), Inches(4.25), Inches(8.6), Inches(1.6),
-            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, the decision matrix.\nSources cited from the Notion Substack table.",
+            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, the decision matrix.\nSource notes live in research/SOURCES.md.",
             size=17, color=MUTED)
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
@@ -593,7 +593,7 @@ Where the agent should stop: start where a colleague or customer already tells y
     fin(s, 16, """
 Close by pointing at the repo. The QR resolves to START-HERE.md on GitHub; the URL next to it is the repo root. Say the URL out loud once for anyone who cannot scan. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
-If they want receipts: research/SOURCES.md lists the Notion pages this was synthesized from, starting with the Substack database https://app.notion.com/p/36e059b703e180d3a962d862c9e380c5
+If they want receipts: research/SOURCES.md catalogs the local source notes and original articles behind the method: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md
 
 Offer to stay for the first job. Help them run the two tests live on something they did last week.
 """)

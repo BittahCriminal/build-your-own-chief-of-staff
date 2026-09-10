@@ -11,6 +11,6 @@ uv pip install --python python3 --target vendor python-pptx qrcode
 PYTHONPATH=vendor python3 slides/build_deck.py
 ```
 
-Speaker notes are on every slide. They cite the Notion pages in `research/SOURCES.md`. The audience never needs those URLs; you do.
+Speaker notes are on every slide. They cite the repo's Markdown source notes through GitHub links. The [source catalog](../research/SOURCES.md) and [notes folder](../research/notes/) are also included in a downloaded copy of the kit.
 
 Slides 10–13 are portals: each has a clickable GitHub URL and a QR to that page.

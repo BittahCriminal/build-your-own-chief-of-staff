@@ -2,7 +2,7 @@
 
 Paste everything below the line. Attach `sources.md` and the draft (spike, plan, brief, decision, weekly update — anything built on second-hand facts). Attach `voice.md` if you want a sendable version. Fill the intake. Drafts only.
 
-This is the CoS version of grounding a claim in primary evidence. The buckets are kinds of fact; **you** name the systems in `sources.md`. Work IQ, Spark, Jira, a Notion database, a spreadsheet — only if you wrote them there.
+This is the CoS version of grounding a claim in primary evidence. The buckets are kinds of fact; **you** name the systems in `sources.md`. Work IQ, Spark, Jira, a shared wiki, a spreadsheet — only if you wrote them there.
 
 ---
 

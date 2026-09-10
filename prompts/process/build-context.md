@@ -32,7 +32,7 @@ Where truth lives for *me*, and how the agent reaches it. This is the Inputs hal
 
 Walk these kinds of fact one at a time: **calendar, mail, chat, work items, docs / wikis, then "anything else you check before you trust a claim."** For each kind, ask in this order and stop at the first "none":
 
-1. **Name.** "What system holds your <kind>? Your name for it." (Outlook, Google Calendar, Teams, Slack, Jira, Linear, Azure DevOps, GitHub Issues, Notion, Confluence, SharePoint, a spreadsheet — whatever I actually open.) If I have none for this kind, leave the row blank and move on.
+1. **Name.** "What system holds your <kind>? Your name for it." (Outlook, Google Calendar, Teams, Slack, Jira, Linear, Azure DevOps, GitHub Issues, Confluence, SharePoint, a spreadsheet — whatever I actually open.) If I have none for this kind, leave the row blank and move on.
 2. **Reach.** "How will the agent get at it in the tool you use?" Exactly one of:
    - **connector** — an MCP server or connected app already switched on in my tool (Cursor / Claude / Copilot connectors; ChatGPT or Gemini connected apps). Record the connector's name **as it appears in my tool**, e.g. "Atlassian", "Linear", "Microsoft 365", "Google Calendar". If I am not sure it is connected, record `connector (unverified)`.
    - **paste** — I export or copy the material into the chat each run.

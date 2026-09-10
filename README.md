@@ -27,6 +27,8 @@ Where to paste, by tool: [`how-to/`](how-to/).
 
 Slides for this talk: [`slides/building-your-own-chief-of-staff.pptx`](slides/building-your-own-chief-of-staff.pptx). Run of show: [`TALK-FLOW.md`](TALK-FLOW.md) (slides, then GitHub).
 
+The [source catalog](research/SOURCES.md) links to 20 local research notes explaining the ideas behind the method.
+
 ## What an agent is, in this kit
 
 Not a robot. Not a developer tool. A job you already do, written down as:
@@ -57,7 +59,7 @@ context-templates/         blanks to copy into a *private* folder
 how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini, and scheduling
 slides/                    the presentation
 TALK-FLOW.md               run of show (15 and 30 min; slides then GitHub)
-research/                  Notion-cited sources this kit was synthesized from
+research/                  local Markdown source notes and original article attribution
 ```
 
 ## Related
