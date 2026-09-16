@@ -154,7 +154,7 @@ def build():
     prs = Presentation()
     prs.slide_width = W
     prs.slide_height = H
-    TOTAL = 16
+    TOTAL = 17
 
     def fin(s, n, note):
         footer(s, n, TOTAL)
@@ -176,7 +176,7 @@ They are leaving with a process they can run Monday in whatever tool they alread
 
 The Chief of Staff agent is the worked example. Briefs, drafts, open loops, meeting prep. The real prize is the two tests they will use on expense reports, hiring screens, and customer research next month.
 
-Cite the local source catalog if asked: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md — 20 Markdown notes documenting the operating rules used in this kit, with original article attribution.
+Cite the local source catalog if asked: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md — 21 Markdown notes documenting the operating rules used in this kit, with original article attribution.
 """)
 
     # 2 Walk away with
@@ -553,7 +553,42 @@ An owner or date that does not point at a line in the notes gets cut. If the not
 Do not put the recap on a timer until they have checked it by hand several times.
 """)
 
-    # 15 Safety card
+    # 15 Where this goes next
+    levels_note = blob("research/notes/agentic-levels.md")
+    s = blank(prs)
+    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
+            "Where this goes next", size=32, bold=True)
+    levels = [
+        ("LEVEL 0", "Human is the loop", "A working process.\nNo agent yet.", "Build this first."),
+        ("LEVEL 1  ← this kit", "Human in the loop", "The agent drafts.\nYou accept every output.", "Limit: your review time."),
+        ("LEVEL 2", "Human on the loop", "You dispatch jobs, on a timer.\nYou check evidence, not every line.", "Limit: how hard your checks are."),
+        ("LEVEL 3", "Human as orchestrator", "The agent reacts to signals.\nYou review the rules.", "Limit: how good your rules are."),
+        ("LEVEL 4", "Autonomous", "The agent starts work itself.\nYou set the boundaries.", "Limit: the whole system, not the model."),
+    ]
+    for i, (lvl, name, what, limit) in enumerate(levels):
+        left = Inches(0.55 + i * 2.5)
+        add_rect(s, left, Inches(1.45), Inches(2.35), Inches(3.4), NAVY2)
+        textbox(s, left + Inches(0.12), Inches(1.6), Inches(2.1), Inches(0.35), lvl, size=12, bold=True, color=GOLD)
+        textbox(s, left + Inches(0.12), Inches(1.95), Inches(2.1), Inches(0.9), name, size=18, bold=True, color=CREAM)
+        textbox(s, left + Inches(0.12), Inches(2.95), Inches(2.1), Inches(1.2), what, size=14, color=CREAM)
+        textbox(s, left + Inches(0.12), Inches(4.25), Inches(2.1), Inches(0.55), limit, size=12, color=MUTED)
+    textbox(s, Inches(0.8), Inches(5.15), Inches(11.5), Inches(0.5),
+            "Everything today is Level 1. Step 7 — schedule it — is the door to Level 2.",
+            size=20, bold=True, color=GOLD)
+    textbox(s, Inches(0.8), Inches(5.75), Inches(11.5), Inches(1.0),
+            "Do not walk through it until the check in your SOP is one a careful stranger could apply in a minute.\nA better model does not move you up a level. Better checks do.",
+            size=16, color=MUTED)
+    fin(s, 15, f"""
+One minute. This is the map, not a step. Everything they watched today sits on the second card: the agent drafted, a human accepted every line.
+
+Level 2 is the hard jump, and it is where most teams are stuck. A timer is dispatch. The moment the recap runs without you asking, you have stopped reading every line and started trusting the check. That only works if the check is deterministic: every owner cites a line, gaps say unassigned, tone matches voice.md. That is why the scheduling gate exists.
+
+Levels 3 and 4 are platform-team territory: agents that wake up on a signal, rules instead of reviews. Name them so the room knows the ladder exists. Do not sell them.
+
+The claim to leave with: the quality of your written checks decides how much autonomy is safe. Source: {levels_note}
+""")
+
+    # 16 Safety card
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Non-negotiable", size=32, bold=True)
@@ -568,7 +603,7 @@ Do not put the recap on a timer until they have checked it by hand several times
         "Approvals sit where actions become hard to undo: send, pay, publish, delete.",
         "One owner per agent.",
     ], size=20, spacing=10)
-    fin(s, 15, """
+    fin(s, 16, """
 Leave this up during Q&A if needed.
 
 If an agent sends a flawed appeal in your name, you now have two problems. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
@@ -578,7 +613,7 @@ Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. 
 Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/where-to-stop.md
 """)
 
-    # 16 Close
+    # 17 Close
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.9), Inches(11.5), Inches(1.4),
             "Automate what repeats and checks.\nKeep the rest.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
@@ -590,7 +625,7 @@ Where the agent should stop: start where a colleague or customer already tells y
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
             "scan: START-HERE.md", size=12, color=MUTED, align=PP_ALIGN.CENTER)
-    fin(s, 16, """
+    fin(s, 17, """
 Close by pointing at the repo. The QR resolves to START-HERE.md on GitHub; the URL next to it is the repo root. Say the URL out loud once for anyone who cannot scan. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
 If they want receipts: research/SOURCES.md catalogs the local source notes and original articles behind the method: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md

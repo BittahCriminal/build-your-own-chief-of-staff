@@ -1,6 +1,6 @@
 # Sources
 
-This catalog links to 20 local Markdown notes documenting the ideas used to build the kit. Each note records the operating rules, how the kit applies them, a practical check, and what was left out. The notes preserve the kit's research synthesis and original article attribution.
+This catalog links to 21 local Markdown notes documenting the ideas used to build the kit. Each note records the operating rules, how the kit applies them, a practical check, and what was left out. The notes preserve the kit's research synthesis and original article attribution.
 
 This kit is a **process**, not a summary of any one post. We took the operating rules. We left vendor lock-in, paid build-it-for-you offers, and "it replaces your Chief of Staff."
 
@@ -33,6 +33,7 @@ When the method changes, update the relevant note and this catalog. Keep the dis
 | [Fails at the task level](notes/task-decomposition.md) | [decompose workflows](https://natesnewsletter.substack.com/p/grab-the-10-prompts-i-use-to-decompose) | AI fails at the *task*, not the workflow. Most workflows are five or six jobs pretending to be one. “Which model?” is the wrong first question. | Multi-model routing charts. |
 | [False success / Mission Fit](notes/false-success.md) | [ai-agent-false-success](https://natesnewsletter.substack.com/p/ai-agent-false-success) | `done` is a claim about the world. A plausible substitute plus a matching filename is how people stop checking. Describe the result without the word “done.” Proof from the system of record, not the transcript. Access / quality / evidence / supervision. | Mission Fit zip install. |
 | [Citation Guard + Assumption Checker](notes/citation-and-assumption-checks.md) | [open-skills / context-engineering](https://unlock-ai.natebjones.com/open-skills/context-engineering) | Claims either cite evidence that *supports* them, ask for confirmation, or get cut. Three-state verdicts. An adversarial pass hunts unstated assumptions and evidence gaps — skeptic, not collaborator. Inventory sources before drafting ([project room](notes/project-room.md)). Portable as `evidence-based-investigation.md`: user-named systems, not a vendor MCP. | SQLite case store; Open Brain; EngHub / WorkIQ / mutation-gate specifics. |
+| [The five levels of agentic work](notes/agentic-levels.md) | ByteCloud platform-engineering library, AI-native platform ("thinking with platforms") material; internal, no public link | The ladder: human is / in / on the loop, orchestrator, autonomous. Your written checks decide how much autonomy is safe. This kit is Level 1; the scheduling gate is the door to Level 2. | Dispatch paths, non-human identity, workspace isolation, GPU platforms, governance planes. |
 | [A better model will not save you](notes/better-models-wont-fix-the-process.md) | [chatgpt-5-wont-save-you](https://natesnewsletter.substack.com/p/chatgpt-5-wont-save-you-10-reasons) | Failures are data, job-shaping, ownership, and ops — not missing intelligence. Waiting for the next release is how projects die. | Boardroom / enterprise-procurement framing. |
 
 ## First-party process (portable, not the Claude plugin)
