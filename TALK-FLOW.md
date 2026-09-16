@@ -41,14 +41,14 @@ Planned at 18.5 minutes so it lands at 20 for real. The demo is the only beat th
 
 | Segment | Where | Time | Beat |
 | --- | --- | --- | --- |
-| Why | Slides 1–4 | ~6 min | Title (process, not a vendor). The two tests. Edges, not the core. The CoS split. Flag meeting-recap. |
+| Why | Slides 1–4 | ~6 min | Title (the process, not the tool). The two tests. Edges, not the core. The CoS split. Flag meeting-recap. |
 | **Open the kit** | **Slide 5 → GitHub README** | **~1 min** | **Click the URL. Point at the six names. Do not tour files.** |
 | **Live demo** | **Slide 6 → `meeting-recap.md` → your tool** | **~6 min** | **Copy the prompt from GitHub. Paste voice.md + meeting details + real notes. Let the room watch the cited draft come back.** |
 | **How** | **Slide 7 → `PROCESS.md`** | **~3 min** | **Walk steps 1–7 on that page, about 25 seconds each, using the recap you just ran.** |
 | Close | Slides 8–11 | ~2.5 min | Monday homework, the five levels (this kit is Level 1), safety card, URL + QR to `START-HERE.md`. |
 | Questions | Slide 10 stays up | rest of slot | See below. |
 
-Cut from the earlier 30-minute deck: walk-away-with, not-a-vendor, fail-either-test, the freeze, why-it-fails, and the ranking card. The freeze and why-it-fails sections are still in `PROCESS.md`; point at them during the walk if the room needs them. The ranking card is [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); open it only if someone asks.
+Cut from the earlier 30-minute deck: walk-away-with, the we-will-not-we-will card, fail-either-test, the freeze, why-it-fails, and the ranking card. The freeze and why-it-fails sections are still in `PROCESS.md`; point at them during the walk if the room needs them. The ranking card is [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); open it only if someone asks.
 
 ## Questions
 
@@ -69,7 +69,7 @@ This is a teaser, not the 20-minute talk compressed. Six slides, one GitHub file
 
 | Where | Time | Beat |
 | --- | --- | --- |
-| Slide 1 | 1 min | Title. Process, not a vendor. |
+| Slide 1 | 1 min | Title. The process, not the tool. |
 | Slide 2 | 2 min | The two tests: repeatable, verifiable. |
 | Slide 4 | 2 min | The CoS split. Flag meeting-recap as the file you are about to open. |
 | **Slide 6 → `meeting-recap.md`** | **5 min** | **Live run. Narrate Inputs → Steps → Output → Check from the actual paste-in and result.** |

@@ -90,7 +90,7 @@ def footer(slide, n, total):
         Inches(7.1),
         Inches(10),
         Inches(0.3),
-        "Build your own chief of staff  ·  process, not a vendor",
+        "Build your own chief of staff  ·  the process, not the tool",
         size=11,
         color=MUTED,
     )
@@ -167,7 +167,7 @@ def build():
     textbox(s, Inches(0.8), Inches(2.2), Inches(11.5), Inches(1.6),
             "Build your own\nchief of staff agent", size=44, bold=True, color=CREAM)
     textbox(s, Inches(0.8), Inches(4.5), Inches(11.5), Inches(1.2),
-            "Teach the process. Not a vendor.\nLeave knowing how to build a CoS agent — and how to automate\nanything that is repeatable and verifiable.",
+            "Teach the process, not a tool.\nLeave knowing how to build a CoS agent — and how to automate\nanything that is repeatable and verifiable.",
             size=20, color=MUTED)
     fin(s, 1, """
 Open by saying this is not a product demo. No one is leaving with a login, a marketplace skill, or a reason to switch from Copilot to Claude.
