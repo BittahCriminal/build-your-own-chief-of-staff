@@ -58,7 +58,7 @@ prompts/workflows/         Chief of Staff jobs, as copy-paste prompts
 context-templates/         blanks to copy into a *private* folder
 how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini, and scheduling
 slides/                    the presentation
-TALK-FLOW.md               run of show (15 and 30 min; slides then GitHub)
+TALK-FLOW.md               run of show (20 min plus questions, or a 15-min teaser; slides then GitHub)
 research/                  local Markdown source notes and original article attribution
 ```
 

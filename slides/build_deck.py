@@ -154,7 +154,7 @@ def build():
     prs = Presentation()
     prs.slide_width = W
     prs.slide_height = H
-    TOTAL = 17
+    TOTAL = 11
 
     def fin(s, n, note):
         footer(s, n, TOTAL)
@@ -179,53 +179,7 @@ The Chief of Staff agent is the worked example. Briefs, drafts, open loops, meet
 Cite the local source catalog if asked: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md — 21 Markdown notes documenting the operating rules used in this kit, with original article attribution.
 """)
 
-    # 2 Walk away with
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "What you walk away with", size=32, bold=True)
-    bullets(s, Inches(0.8), Inches(1.6), Inches(11.5), Inches(3.2), [
-        "How to stand up a personal Chief of Staff without writing code.",
-        "How to decide what should be an agent — and what must stay human.",
-        "A folder of markdown files you paste into Copilot, Cursor, Claude, ChatGPT, or Gemini.",
-    ], size=24, spacing=18)
-    textbox(s, Inches(0.8), Inches(5.3), Inches(11.5), Inches(1.2),
-            "The model is interchangeable. Your process is not.",
-            size=22, bold=True, color=GOLD)
-    fin(s, 2, """
-Pause on the third bullet. These are ordinary markdown files. If their IT department only allows Copilot, they are fine. If they live in ChatGPT, they are fine.
-
-The context files they fill in privately — who they are, this quarter's priorities, how they write, where truth lives — are the operating system. Swap the vendor tomorrow and nothing important moves. START-HERE.md is how the folder lands on a PC. Do not walk the file tree here — that happens on GitHub in a few minutes.
-
-That claim is from the context-files note (Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/context-files.md) and from the delegation kit's memory scaffold (https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md).
-""")
-
-    # 3 Not a vendor
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "This is not a vendor talk", size=32, bold=True)
-    add_rect(s, Inches(0.8), Inches(1.6), Inches(5.5), Inches(4.4), NAVY2)
-    add_rect(s, Inches(6.9), Inches(1.6), Inches(5.5), Inches(4.4), NAVY2)
-    textbox(s, Inches(1.05), Inches(1.85), Inches(5), Inches(0.5), "WE WILL NOT", size=14, bold=True, color=GOLD)
-    bullets(s, Inches(1.05), Inches(2.4), Inches(5), Inches(3.2), [
-        "Pick a model for you.",
-        "Install a plugin.",
-        "Promise it replaces a human CoS.",
-        "Let it send anything.",
-    ], size=18, spacing=12)
-    textbox(s, Inches(7.15), Inches(1.85), Inches(5), Inches(0.5), "WE WILL", size=14, bold=True, color=GOLD)
-    bullets(s, Inches(7.15), Inches(2.4), Inches(5), Inches(3.2), [
-        "Write the job down.",
-        "Put you in files you own.",
-        "Check the draft against a source.",
-        "Fix the file when it is wrong.",
-    ], size=18, spacing=12)
-    fin(s, 3, """
-Say the refusal out loud. 'It replaces your Chief of Staff' is marketing. A human CoS does two kinds of work. Operational: reconstruct context, draft the update, prep the meeting, keep loops from disappearing. Judgment: when to push, how a room will land, which red line you will not cross.
-
-We automate the first. We keep the second. That split is the whole talk, and it is the load-bearing claim in the Delegation Kit note: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md
-""")
-
-    # 4 Two tests
+    # 2 Two tests
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "The whole course is two tests", size=32, bold=True)
@@ -239,80 +193,23 @@ We automate the first. We keep the second. That split is the whole talk, and it 
     textbox(s, Inches(7.2), Inches(2.8), Inches(5), Inches(2.6),
             "A careful human can check the output\nagainst a source, a template, or a\nyes/no rule.\n\n“Does this sound good?” is not a check.",
             size=18, color=CREAM)
-    fin(s, 4, """
+    fin(s, 2, """
 Stay here. This is the slide they should photograph.
 
 Repeatable: Monday status (same headings, new evidence) yes. Meeting recap yes. Which of two candidates to hire no. 'Handle my email' is usually seventeen jobs — split it.
 
 Verifiable: every Done line cites a ticket you can open; the recap names an owner only when the notes name one; gaps stay 'not found'. 'Make it professional' cannot drive a loop.
 
-Fail either test → do not automate. That is not caution. That is the curriculum.
+Fail either test → do not automate. That is not caution. That is the curriculum. The leftover is judgment: taste, red lines, how a room will land. Keep it.
+
+If the room is frozen at an empty prompt: 'handle my email' is seventeen jobs, split it. what-to-automate.md on GitHub. The freeze and why-it-fails material is in PROCESS.md, not on a slide in this cut.
 
 The checkability argument: if checking an answer costs as much as making it, extra attempts just grow the pile. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/agent-shaped-work.md
 
 And: if you cannot name what would make you say 'not yet,' you have a vibe, not a job. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/verification-gap.md
 """)
 
-    # 5 Fail either
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(2.0), Inches(11.5), Inches(1.4),
-            "Fail either test → do not automate.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
-    textbox(s, Inches(1.5), Inches(3.6), Inches(10.2), Inches(1.6),
-            "That leftover is judgment.\nTaste, red lines, how a room will land, which story is worth telling.\nKeep it.",
-            size=22, color=CREAM, align=PP_ALIGN.CENTER)
-    fin(s, 5, """
-Let this land. People came hoping to automate the hard conversations. Tell them no, kindly.
-
-The shape-of-the-work briefing: if you automate work that depends on trust and judgment, you break the process at the point where the human mattered most. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/shape-of-work.md
-
-And from automation discovery: frequency is evidence, not value. Choosing none of the offered automations is allowed. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/let-history-pick.md
-""")
-
-    # 6 The freeze
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "Then people freeze", size=32, bold=True)
-    textbox(s, Inches(0.8), Inches(1.5), Inches(11.5), Inches(1.4),
-            "They buy the tool. They connect a few things.\nThey stare at an empty prompt.",
-            size=24, color=CREAM)
-    bullets(s, Inches(0.8), Inches(3.2), Inches(11.5), Inches(3.2), [
-        "Idle agents are not broken. Nobody dispatched them.",
-        "“Handle my email” is usually seventeen jobs you have never named.",
-        "Do not let the model pick the problem and build it. You choose. None is allowed.",
-    ], size=20, spacing=14)
-    fin(s, 6, """
-This is the paralysis slide. Stay here until they nod.
-
-Nate's empty-prompt piece: people have a capable agent and keep staring at the box. The first version of automation-discovery let the AI pick and build — he killed that 'magic button' because it hides the judgment call. Offer sheet, then a human chooses. Choosing none is allowed. Frequency is not value. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/let-history-pick.md
-
-Idle agents: a social network for agents filled up and sat there. They were never asked to do a single thing. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/agent-shaped-work.md
-
-Point them at prompts/process/what-to-automate.md on GitHub later — last week, split the blob, edge vs core, two tests, one fast win.
-""")
-
-    # 7 Why it fails
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "Why this work actually fails", size=32, bold=True)
-    bullets(s, Inches(0.8), Inches(1.45), Inches(11.5), Inches(5.2), [
-        "Core-first. Automate the judgment. Three months later: stalled, bloated, humans checked out.",
-        "A blob treated as one job. The model writes something that looks like a PRD and falls apart.",
-        "No check. Success was “it sounds good,” or the agent said done.",
-        "False success. Matching filename, finished-looking draft, wrong file. People stop looking.",
-        "Waiting for a smarter model. The missing piece was a named job, a source, and an owner.",
-    ], size=18, spacing=12)
-    fin(s, 7, """
-These failure modes come from Nate's essays, summarized in the local source notes below.
-
-Core-first vs edges: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/why-agent-projects-fail.md
-Fails at the task level (five jobs pretending to be one): https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/task-decomposition.md
-False success (wrong spreadsheet, said done): https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/false-success.md
-A better model will not save you: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/better-models-wont-fix-the-process.md
-
-The postmortem prompt is diagnose-the-stall.md — they will see it under prompts/process/ on GitHub, not as a slide.
-""")
-
-    # 8 Start at the edges
+    # 3 Start at the edges
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Start at the edges, not the core", size=32, bold=True)
@@ -331,7 +228,7 @@ The postmortem prompt is diagnose-the-stall.md — they will see it under prompt
     textbox(s, Inches(0.8), Inches(4.55), Inches(11.5), Inches(1.8),
             "The core is craft: taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest lift — not the most impressive one.",
             size=18, color=MUTED)
-    fin(s, 8, """
+    fin(s, 3, """
 Edge-first is the thought process they came for. Data preparation, QA, synthesis, packaging, coordination. Cheap errors. Humans can pick up an exception without the whole workflow breaking.
 
 The core is where they groan that they want help — and where first projects die. Trust is the real project: automate around the craft, not through it.
@@ -341,7 +238,7 @@ Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/mai
 CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to push, which story to tell = core.
 """)
 
-    # 9 CoS is / isn't
+    # 4 CoS is / isn't
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "The Chief of Staff is the teaching case", size=30, bold=True)
@@ -368,7 +265,7 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
     textbox(s, Inches(0.9), Inches(6.3), Inches(11.8), Inches(0.5),
             "Meeting recap needs the least setup of the six — one voice file, meeting details, and one real transcript.",
             size=15, color=MUTED)
-    fin(s, 9, """
+    fin(s, 4, """
 Walk the left column: these are the eight portable jobs from the Delegation Kit, renamed into operator English. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md
 
 The right column is not 'AI can't do it.' It is 'checking it costs as much as doing it, so extra attempts just grow the pile.'
@@ -376,10 +273,9 @@ The right column is not 'AI can't do it.' It is 'checking it costs as much as do
 Flag meeting-recap now. Next slide leaves PowerPoint. You will open the GitHub file, copy it, and run it.
 """)
 
-    # 10 Open the kit
+    # 5 Open the kit
     recap = blob("prompts/workflows/meeting-recap.md")
     process = blob("PROCESS.md")
-    score = blob("prompts/process/score-the-candidates.md")
 
     s = blank(prs)
     github_dest(s, "README.md (repo root)", REPO)
@@ -402,7 +298,7 @@ Flag meeting-recap now. Next slide leaves PowerPoint. You will open the GitHub f
         top = Inches(2.35 + r * 1.0)
         textbox(s, left, top, Inches(2.75), Inches(0.4), fn, size=13, bold=True, color=GOLD)
         textbox(s, left, top + Inches(0.35), Inches(2.75), Inches(0.5), desc, size=12, color=CREAM)
-    fin(s, 10, """
+    fin(s, 5, """
 Click the URL or scan. Stay on the README for about a minute. Point at the six names. Personal data never ships here — context-templates/ are blanks.
 
 Do not take questions about which model is 'best'. Once the job is named and the check exists, use whatever they already pay for. The how-to/ folder is only which box to paste into.
@@ -412,7 +308,7 @@ Reusable-rig essay: skills should be local, inspectable, and independent of whic
 Then go to the next slide and open meeting-recap.md. Do not walk PROCESS.md yet.
 """)
 
-    # 11 Live demo portal
+    # 6 Live demo portal
     s = blank(prs)
     github_dest(s, "prompts/workflows/meeting-recap.md", recap)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
@@ -422,7 +318,7 @@ Then go to the next slide and open meeting-recap.md. Do not walk PROCESS.md yet.
         "Fully verifiable: every decision, owner, and date must cite a line in the notes.",
         "Open the GitHub page. Copy the prompt. Paste it with voice.md and the notes. Run it.",
     ], size=18, spacing=12)
-    fin(s, 11, f"""
+    fin(s, 6, f"""
 Leave PowerPoint. Open {recap}
 
 Paste an actual recent meeting's title, date, attendees, notes or transcript, and a filled-in voice.md into whatever tool the room uses.
@@ -434,7 +330,7 @@ If the model invents an owner, do not panic — that is Step 5 (cite or cut) hap
 Have the dry-run output saved as a fallback tab.
 """)
 
-    # 12 PROCESS.md portal
+    # 7 PROCESS.md portal
     s = blank(prs)
     github_dest(s, "PROCESS.md", process)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
@@ -460,7 +356,7 @@ Have the dry-run output saved as a fallback tab.
             left = Inches(0.8 + c * 4.3)
             top = Inches(2.05 + r * 0.5)
         textbox(s, left, top, Inches(4.1), Inches(0.45), step, size=16, color=CREAM)
-    fin(s, 12, f"""
+    fin(s, 7, f"""
 Open {process} and stay there. Do not flip back to slides for each step.
 
 For the recap you just ran:
@@ -474,59 +370,10 @@ For the recap you just ran:
 
 Then say: point the same seven steps at expense reports, hiring screens, incident recaps. Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/workflow-readiness.md
 
-Come back to the deck for the ranking card, Monday homework, and the close.
+Come back to the deck for Monday homework, the levels, and the close. The ranking card (score-the-candidates.md) is not a slide in this cut; name it if someone has three ideas.
 """)
 
-    # 13 Decision matrix
-    s = blank(prs)
-    textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "Rank your next candidates", size=32, bold=True)
-    axes = [
-        ("Repeatable", "0–2: special case →\nsame process"),
-        ("Verifiable", "0–2: no check →\nhard source check"),
-        ("Frequency", "0–2: rare →\ndaily+"),
-        ("Blast radius", "0–2: irreversible →\nlow-stakes draft"),
-        ("Spec ready", "0–2: nothing named →\ninputs already named"),
-    ]
-    for i, (head, body) in enumerate(axes):
-        left = Inches(0.55 + i * 2.5)
-        add_rect(s, left, Inches(1.35), Inches(2.35), Inches(2.0), NAVY2)
-        textbox(s, left + Inches(0.12), Inches(1.55), Inches(2.1), Inches(0.45), head,
-                size=16, bold=True, color=GOLD)
-        textbox(s, left + Inches(0.12), Inches(2.05), Inches(2.1), Inches(1.0), body,
-                size=14, color=CREAM)
-    textbox(s, Inches(0.8), Inches(3.55), Inches(11.5), Inches(0.45),
-            "A zero on Repeatable or Verifiable overrides everything else — that candidate stays judgment.",
-            size=18, bold=True, color=GOLD)
-    verdicts = [
-        ("8–10", "Build now"),
-        ("5–7", "Build next"),
-        ("2–4", "Not yet"),
-        ("score swings", "Split further"),
-        ("zero on two tests", "Keep as judgment"),
-    ]
-    for i, (sc, verdict) in enumerate(verdicts):
-        left = Inches(0.55 + i * 2.5)
-        add_rect(s, left, Inches(4.15), Inches(2.35), Inches(1.2), NAVY2)
-        textbox(s, left + Inches(0.12), Inches(4.3), Inches(2.1), Inches(0.3), sc,
-                size=13, bold=True, color=MUTED)
-        textbox(s, left + Inches(0.12), Inches(4.65), Inches(2.1), Inches(0.55), verdict,
-                size=16, bold=True, color=CREAM)
-    textbox(s, Inches(0.8), Inches(5.55), Inches(8.6), Inches(0.35),
-            "prompts/process/score-the-candidates.md", size=16, bold=True, color=GOLD)
-    linked_url(s, Inches(0.8), Inches(5.95), Inches(8.6), Inches(0.55), score, size=14)
-    add_qr(s, score, Inches(10.15), Inches(5.4), Inches(1.55))
-    fin(s, 13, f"""
-The two tests filter one candidate at a time; they do not rank several. Score every candidate on these five axes out of 10. A zero on Repeatable or Verifiable overrides the total.
-
-'Not yet' is the honest middle: it passes both tests but is too rare, too risky, or too unspecified this month.
-
-Open if someone has three ideas: {score}
-
-The raw material is in research/SOURCES.md: the shape-of-the-work row uses frequency, cost of a mistake, and judgment load.
-""")
-
-    # 14 Thirty minutes
+    # 8 Thirty minutes
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Thirty minutes on Monday: run meeting-recap once", size=28, bold=True)
@@ -545,7 +392,7 @@ The raw material is in research/SOURCES.md: the shape-of-the-work row uses frequ
     textbox(s, Inches(0.8), Inches(6.25), Inches(11.5), Inches(0.5),
             "Froze on picking a meeting? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
             size=15, color=MUTED)
-    fin(s, 14, """
+    fin(s, 8, """
 This mirrors the README 'Start here' path, but the deliverable is one real run. START-HERE.md first if the files are not on the machine yet. They already watched this exact run; Monday they do it on their own meeting.
 
 An owner or date that does not point at a line in the notes gets cut. If the notes name nobody, the recap says unassigned. That is the agent working.
@@ -553,7 +400,7 @@ An owner or date that does not point at a line in the notes gets cut. If the not
 Do not put the recap on a timer until they have checked it by hand several times.
 """)
 
-    # 15 Where this goes next
+    # 9 Where this goes next
     levels_note = blob("research/notes/agentic-levels.md")
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
@@ -578,7 +425,7 @@ Do not put the recap on a timer until they have checked it by hand several times
     textbox(s, Inches(0.8), Inches(5.75), Inches(11.5), Inches(1.0),
             "Do not walk through it until the check in your SOP is one a careful stranger could apply in a minute.\nA better model does not move you up a level. Better checks do.",
             size=16, color=MUTED)
-    fin(s, 15, f"""
+    fin(s, 9, f"""
 One minute. This is the map, not a step. Everything they watched today sits on the second card: the agent drafted, a human accepted every line.
 
 Level 2 is the hard jump, and it is where most teams are stuck. A timer is dispatch. The moment the recap runs without you asking, you have stopped reading every line and started trusting the check. That only works if the check is deterministic: every owner cites a line, gaps say unassigned, tone matches voice.md. That is why the scheduling gate exists.
@@ -588,7 +435,7 @@ Levels 3 and 4 are platform-team territory: agents that wake up on a signal, rul
 The claim to leave with: the quality of your written checks decides how much autonomy is safe. Source: {levels_note}
 """)
 
-    # 16 Safety card
+    # 10 Safety card
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Non-negotiable", size=32, bold=True)
@@ -603,8 +450,8 @@ The claim to leave with: the quality of your written checks decides how much aut
         "Approvals sit where actions become hard to undo: send, pay, publish, delete.",
         "One owner per agent.",
     ], size=20, spacing=10)
-    fin(s, 16, """
-Leave this up during Q&A if needed.
+    fin(s, 10, """
+Leave this up for questions. This is the last content slide before the close.
 
 If an agent sends a flawed appeal in your name, you now have two problems. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
 
@@ -613,7 +460,7 @@ Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. 
 Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/where-to-stop.md
 """)
 
-    # 17 Close
+    # 11 Close
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.9), Inches(11.5), Inches(1.4),
             "Automate what repeats and checks.\nKeep the rest.", size=36, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
@@ -625,7 +472,7 @@ Where the agent should stop: start where a colleague or customer already tells y
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
             "scan: START-HERE.md", size=12, color=MUTED, align=PP_ALIGN.CENTER)
-    fin(s, 17, """
+    fin(s, 11, """
 Close by pointing at the repo. The QR resolves to START-HERE.md on GitHub; the URL next to it is the repo root. Say the URL out loud once for anyone who cannot scan. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
 
 If they want receipts: research/SOURCES.md catalogs the local source notes and original articles behind the method: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md
