@@ -1,8 +1,8 @@
 # Slides
 
-Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (17 slides). The argument is on the slides; after slide 9 you open GitHub for the files.
+Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (11 slides). The argument is on the slides; after slide 4 you open GitHub for the files.
 
-Run of show: [TALK-FLOW.md](../TALK-FLOW.md) includes the 15- and 30-minute paths, which tabs to pre-open, and live-demo preparation.
+Run of show: [TALK-FLOW.md](../TALK-FLOW.md) includes the 20-minute path with questions after, and a 15-minute teaser, which tabs to pre-open, and live-demo preparation.
 
 Rebuild (needs `python-pptx` and `qrcode`):
 
@@ -13,4 +13,4 @@ PYTHONPATH=vendor python3 slides/build_deck.py
 
 Speaker notes are on every slide. They cite the repo's Markdown source notes through GitHub links. The [source catalog](../research/SOURCES.md) and [notes folder](../research/notes/) are also included in a downloaded copy of the kit.
 
-Slides 10–13 are portals: each has a clickable GitHub URL and a QR to that page.
+Slides 5–7 are portals: each has a clickable GitHub URL and a QR to that page.
