@@ -1,6 +1,6 @@
 # Slides
 
-Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (16 slides). The argument is on the slides; after slide 9 you open GitHub for the files.
+Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (17 slides). The argument is on the slides; after slide 9 you open GitHub for the files.
 
 Run of show: [TALK-FLOW.md](../TALK-FLOW.md) includes the 15- and 30-minute paths, which tabs to pre-open, and live-demo preparation.
 

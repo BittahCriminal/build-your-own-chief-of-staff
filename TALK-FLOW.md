@@ -1,6 +1,6 @@
 # Talk flow — 15 vs. 30 minutes
 
-16 slides. The argument stays on slides. The files live on GitHub. After slide 9 you leave PowerPoint and open the repo; you only come back for the ranking card, Monday homework, and the close.
+17 slides. The argument stays on slides. The files live on GitHub. After slide 9 you leave PowerPoint and open the repo; you only come back for the ranking card, Monday homework, the levels ladder, and the close.
 
 Both versions pivot on the same moment: slide 11, then a live run of `prompts/workflows/meeting-recap.md` copied from GitHub.
 
@@ -35,7 +35,7 @@ Also:
 - Do a dry run once so you know roughly what the output looks like.
 - Save that dry-run output as a fallback screenshot or a fifth tab.
 
-## 30-minute run of show (16 slides)
+## 30-minute run of show (17 slides)
 
 | Segment | Where | Time | Beat |
 | --- | --- | --- | --- |
@@ -44,7 +44,7 @@ Also:
 | **Live demo** | **Slide 11 → `meeting-recap.md` → your tool** | **~4 min** | **Copy the prompt from GitHub. Paste voice.md + meeting details + real notes. Let the room watch the cited draft come back.** |
 | **How** | **Slide 12 → `PROCESS.md`** | **~7 min** | **Walk steps 1–7 on that page, using the recap you just ran. Do not return to slides for each step.** |
 | Rank | Slide 13 → `score-the-candidates.md` if needed | ~2 min | Decision matrix. Open the file only if someone has three ideas. |
-| Close | Slides 14–16 | ~4 min | Monday homework (same recap, their meeting), safety card, URL + QR to `START-HERE.md` |
+| Close | Slides 14–17 | ~5 min | Monday homework (same recap, their meeting), where this goes next (the five levels; one minute, this kit is Level 1), safety card, URL + QR to `START-HERE.md` |
 
 ## 15-minute core path
 
@@ -57,9 +57,9 @@ This is a teaser, not the 30-minute talk compressed. Six slides, one GitHub file
 | Slide 9 | 2 min | The CoS split. Flag meeting-recap as the file you are about to open. |
 | **Slide 11 → `meeting-recap.md`** | **5 min** | **Live run. Narrate Inputs → Steps → Output → Check from the actual paste-in and result.** |
 | Slide 14 | 2 min | The thirty-minute take-home: the same run, on their own meeting, Monday. |
-| Slide 16 | 1 min | Close: URL and QR to `START-HERE.md`. |
+| Slide 17 | 1 min | Close: URL and QR to `START-HERE.md`. |
 
-Say three things out loud instead of showing them: drafts only, never send (slide 15); only put it on a timer after several hand-checked runs (`PROCESS.md` step 7); and the method is `PROCESS.md` if they want the seven steps. If someone leaves with three ideas instead of one, point them at [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); the decision matrix (slide 13) is not in this path.
+Say three things out loud instead of showing them: drafts only, never send (slide 16); only put it on a timer after several hand-checked runs (`PROCESS.md` step 7); and the method is `PROCESS.md` if they want the seven steps. If someone leaves with three ideas instead of one, point them at [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md); the decision matrix (slide 13) and the levels ladder (slide 15) are not in this path.
 
 ## If the live demo doesn't cooperate
 
