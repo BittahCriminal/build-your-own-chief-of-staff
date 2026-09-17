@@ -160,6 +160,13 @@ def build():
         footer(s, n, TOTAL)
         notes(s, note)
 
+    sources = blob("research/SOURCES.md")
+    weekly = blob("prompts/workflows/weekly-update.md")
+    process = blob("PROCESS.md")
+
+    def note_src(name):
+        return blob(f"research/notes/{name}")
+
     # 1 Title
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(1.7), Inches(11.5), Inches(0.4),
@@ -167,16 +174,16 @@ def build():
     textbox(s, Inches(0.8), Inches(2.2), Inches(11.5), Inches(1.6),
             "Build your own\nchief of staff agent", size=44, bold=True, color=CREAM)
     textbox(s, Inches(0.8), Inches(4.5), Inches(11.5), Inches(1.2),
-            "Teach the process, not a tool.\nLeave knowing how to build a CoS agent — and how to automate\nanything that is repeatable and verifiable.",
+            "Teach the process, not a tool.\nLeave knowing how to build a CoS agent, and how to automate\nanything that is repeatable and verifiable.",
             size=20, color=MUTED)
-    fin(s, 1, """
-Open by saying this is not a product demo. No one is leaving with a login, a marketplace skill, or a reason to switch from Copilot to Claude.
+    fin(s, 1, f"""
+One minute. Not a product demo. Nobody leaves with a login or a reason to switch tools. They leave with a process they can run Monday in whatever they already have.
 
-They are leaving with a process they can run Monday in whatever tool they already have.
+The Chief of Staff agent is the worked example. The weekly update is the file we run live.
 
-The Chief of Staff agent is the worked example. Briefs, drafts, open loops, meeting prep. The real prize is the two tests they will use on expense reports, hiring screens, and customer research next month.
+The prize is the two tests. They will use them on expense reports, hiring screens, and customer research next month.
 
-Cite the local source catalog if asked: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md — 21 Markdown notes documenting the operating rules used in this kit, with original article attribution.
+Sources, if asked: {sources} (21 notes, with the original article named in each).
 """)
 
     # 2 Two tests
@@ -187,26 +194,24 @@ Cite the local source catalog if asked: https://github.com/BittahCriminal/build-
     add_rect(s, Inches(6.9), Inches(1.7), Inches(5.5), Inches(4.3), NAVY2)
     textbox(s, Inches(1.1), Inches(2.0), Inches(5), Inches(0.6), "1. Repeatable", size=26, bold=True, color=GOLD)
     textbox(s, Inches(1.1), Inches(2.8), Inches(5), Inches(2.6),
-            "You would do the same steps next week.\nSame kinds of inputs. Same shape of output.\n\nSpecial cases every time = judgment.\nKeep it.",
+            "You would do the same steps next week.\nSame kinds of inputs. Same shape of output.\n\nSpecial cases every time is judgment.\nKeep it.",
             size=18, color=CREAM)
     textbox(s, Inches(7.2), Inches(2.0), Inches(5), Inches(0.6), "2. Verifiable", size=26, bold=True, color=GOLD)
     textbox(s, Inches(7.2), Inches(2.8), Inches(5), Inches(2.6),
-            "A careful human can check the output\nagainst a source, a template, or a\nyes/no rule.\n\n“Does this sound good?” is not a check.",
+            "A careful human can check the output\nagainst a source, a template, or a\nyes/no rule.\n\n\"Does this sound good?\" is not a check.",
             size=18, color=CREAM)
-    fin(s, 2, """
-Stay here. This is the slide they should photograph.
+    fin(s, 2, f"""
+Two minutes. This is the slide they photograph.
 
-Repeatable: Monday status (same headings, new evidence) yes. Meeting recap yes. Which of two candidates to hire no. 'Handle my email' is usually seventeen jobs — split it.
+Repeatable, yes: the weekly update, same headings every Friday with new evidence. No: which of two candidates to hire.
 
-Verifiable: every Done line cites a ticket you can open; the recap names an owner only when the notes name one; gaps stay 'not found'. 'Make it professional' cannot drive a loop.
+Verifiable, yes: every Done line cites a ticket or a message you can open. No: "make it sound professional".
 
-Fail either test → do not automate. That is not caution. That is the curriculum. The leftover is judgment: taste, red lines, how a room will land. Keep it.
+Fail either test, do not automate. The leftover is judgment: taste, red lines, how a room will land. Keep it.
 
-If the room is frozen at an empty prompt: 'handle my email' is seventeen jobs, split it. what-to-automate.md on GitHub. The freeze and why-it-fails material is in PROCESS.md, not on a slide in this cut.
+If the room is stuck at an empty prompt: "handle my email" is seventeen jobs. Split it. The prompt for that is what-to-automate.md.
 
-The checkability argument: if checking an answer costs as much as making it, extra attempts just grow the pile. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/agent-shaped-work.md
-
-And: if you cannot name what would make you say 'not yet,' you have a vibe, not a job. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/verification-gap.md
+Sources: {note_src("agent-shaped-work.md")} (checking costs as much as making) and {note_src("verification-gap.md")} (if you cannot name "not yet", you have a vibe).
 """)
 
     # 3 Start at the edges
@@ -216,8 +221,8 @@ And: if you cannot name what would make you say 'not yet,' you have a vibe, not 
     edges = [
         ("Prep", "Collect, clean, reconcile"),
         ("Check", "Completeness, obvious errors"),
-        ("Summarize", "Thread → one page"),
-        ("Package", "Analysis → brief / recap"),
+        ("Summarize", "A thread into one page"),
+        ("Package", "Analysis into a brief or an update"),
         ("Hand off", "Move context. Stop being the glue."),
     ]
     for i, (h, d) in enumerate(edges):
@@ -226,16 +231,16 @@ And: if you cannot name what would make you say 'not yet,' you have a vibe, not 
         textbox(s, left + Inches(0.12), Inches(1.8), Inches(2.1), Inches(0.7), h, size=20, bold=True, color=GOLD)
         textbox(s, left + Inches(0.12), Inches(2.55), Inches(2.1), Inches(1.4), d, size=15, color=CREAM)
     textbox(s, Inches(0.8), Inches(4.55), Inches(11.5), Inches(1.8),
-            "The core is craft: taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest lift — not the most impressive one.",
+            "The core is craft. Taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest lift, not the most impressive one.",
             size=18, color=MUTED)
-    fin(s, 3, """
-Edge-first is the thought process they came for. Data preparation, QA, synthesis, packaging, coordination. Cheap errors. Humans can pick up an exception without the whole workflow breaking.
+    fin(s, 3, f"""
+Ninety seconds. Edges are prep, checking, summarizing, packaging, handing off. Errors are cheap there, and a human can catch one without the whole thing breaking.
 
-The core is where they groan that they want help — and where first projects die. Trust is the real project: automate around the craft, not through it.
+The core is where people want help first and where first projects die. Automate around the craft, not through it.
 
-Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/why-agent-projects-fail.md
+The weekly update is packaging. When to push, and which story to tell, stays core.
 
-CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to push, which story to tell = core.
+Source: {note_src("why-agent-projects-fail.md")}
 """)
 
     # 4 CoS is / isn't
@@ -244,16 +249,16 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
             "The Chief of Staff is the teaching case", size=30, bold=True)
     add_rect(s, Inches(0.8), Inches(1.5), Inches(5.5), Inches(4.7), NAVY2)
     add_rect(s, Inches(6.9), Inches(1.5), Inches(5.5), Inches(4.7), NAVY2)
-    textbox(s, Inches(1.1), Inches(1.75), Inches(5), Inches(0.5), "OPERATIONAL  —  automate", size=14, bold=True, color=GOLD)
+    textbox(s, Inches(1.1), Inches(1.75), Inches(5), Inches(0.5), "OPERATIONAL. Automate.", size=14, bold=True, color=GOLD)
     bullets(s, Inches(1.1), Inches(2.4), Inches(5), Inches(3.5), [
+        "Weekly update. We open this file next.",
         "Morning brief",
-        "Weekly update",
         "Meeting prep",
-        "Meeting recap ← we open this file next",
+        "Meeting recap",
         "Open loops",
         "Drafts of mail you will send",
     ], size=18, spacing=10)
-    textbox(s, Inches(7.2), Inches(1.75), Inches(5), Inches(0.5), "JUDGMENT  —  keep", size=14, bold=True, color=GOLD)
+    textbox(s, Inches(7.2), Inches(1.75), Inches(5), Inches(0.5), "JUDGMENT. Keep.", size=14, bold=True, color=GOLD)
     bullets(s, Inches(7.2), Inches(2.4), Inches(5), Inches(3.5), [
         "When to push or hold",
         "How a room will land",
@@ -263,20 +268,17 @@ CoS mapping: recap, brief, open-loop list, packaging a status = edges. When to p
         "Anything you would not put your name on unread",
     ], size=18, spacing=10)
     textbox(s, Inches(0.9), Inches(6.3), Inches(11.8), Inches(0.5),
-            "Meeting recap needs the least setup of the six — one voice file, meeting details, and one real transcript.",
+            "The weekly update needs three context files, who you are, the quarter's priorities, and your voice, plus last week's evidence.",
             size=15, color=MUTED)
-    fin(s, 4, """
-Walk the left column: these are the eight portable jobs from the Delegation Kit, renamed into operator English. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/delegation-kit.md
+    fin(s, 4, f"""
+Ninety seconds. Left column: the portable jobs from the Delegation Kit, in operator English. Source: {note_src("delegation-kit.md")}
 
-The right column is not 'AI can't do it.' It is 'checking it costs as much as doing it, so extra attempts just grow the pile.'
+Right column is not "AI cannot do it". It is "checking it costs as much as doing it".
 
-Flag meeting-recap now. Next slide leaves PowerPoint. You will open the GitHub file, copy it, and run it.
+Flag the weekly update. Next slide leaves PowerPoint. You open the file on GitHub, copy it, and run it in your editor.
 """)
 
     # 5 Open the kit
-    recap = blob("prompts/workflows/meeting-recap.md")
-    process = blob("PROCESS.md")
-
     s = blank(prs)
     github_dest(s, "README.md (repo root)", REPO)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
@@ -286,7 +288,7 @@ Flag meeting-recap now. Next slide leaves PowerPoint. You will open the GitHub f
             size=18, color=MUTED)
     kit = [
         ("START-HERE.md", "Get the files onto a PC"),
-        ("PROCESS.md", "The method — we walk this after the demo"),
+        ("PROCESS.md", "The method. We walk it after the demo"),
         ("prompts/workflows/", "The CoS jobs, ready to paste"),
         ("prompts/process/", "Turn any job into a workflow"),
         ("context-templates/", "Blanks. Copy privately. Fill them."),
@@ -298,36 +300,38 @@ Flag meeting-recap now. Next slide leaves PowerPoint. You will open the GitHub f
         top = Inches(2.35 + r * 1.0)
         textbox(s, left, top, Inches(2.75), Inches(0.4), fn, size=13, bold=True, color=GOLD)
         textbox(s, left, top + Inches(0.35), Inches(2.75), Inches(0.5), desc, size=12, color=CREAM)
-    fin(s, 5, """
-Click the URL or scan. Stay on the README for about a minute. Point at the six names. Personal data never ships here — context-templates/ are blanks.
+    fin(s, 5, f"""
+One minute. Click the URL. Stay on the README. Point at the six names. Personal data never ships here; the templates are blanks.
 
-Do not take questions about which model is 'best'. Once the job is named and the check exists, use whatever they already pay for. The how-to/ folder is only which box to paste into.
+Park "which model is best" for questions. Once the job is named and the check exists, use what they already pay for.
 
-Reusable-rig essay: skills should be local, inspectable, and independent of whichever AI app you are renting this month. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
+Then the next slide. Do not open PROCESS.md yet.
 
-Then go to the next slide and open meeting-recap.md. Do not walk PROCESS.md yet.
+Source: {note_src("reusable-rig.md")} (skills local, inspectable, independent of the app you rent).
 """)
 
     # 6 Live demo portal
     s = blank(prs)
-    github_dest(s, "prompts/workflows/meeting-recap.md", recap)
+    github_dest(s, "prompts/workflows/weekly-update.md", weekly)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
-            "This file, live: meeting recap", size=32, bold=True)
+            "Weekly update, live", size=32, bold=True)
     bullets(s, Inches(0.8), Inches(1.55), Inches(8.6), Inches(2.8), [
-        "Lowest setup of the six CoS jobs — voice.md, meeting details, one real transcript.",
-        "Fully verifiable: every decision, owner, and date must cite a line in the notes.",
-        "Open the GitHub page. Copy the prompt. Paste it with voice.md and the notes. Run it.",
+        "Three context files: who-i-am.md, priorities.md, voice.md. Plus last week's evidence, pulled from Work IQ before the talk.",
+        "Every Done line has to cite a ticket, a meeting, or a message you can open.",
+        "Copy the prompt from GitHub. Paste it with the files and the evidence into your editor. Run it.",
     ], size=18, spacing=12)
     fin(s, 6, f"""
-Leave PowerPoint. Open {recap}
+Six minutes. Leave PowerPoint. Show the file on GitHub for ten seconds, then switch to the editor.
 
-Paste an actual recent meeting's title, date, attendees, notes or transcript, and a filled-in voice.md into whatever tool the room uses.
+The paste is already on the clipboard: the prompt, the three context files, last week's evidence. Paste. Run.
 
-This is the pivot: everything before this was 'why.' Everything after is 'how,' using the recap you just got.
+While it runs, say where the evidence came from: meetings, sent mail, and work items, one Work IQ prompt each.
 
-If the model invents an owner, do not panic — that is Step 5 (cite or cut) happening live.
+Read the draft out loud. Click one Done link. If the model invented a number or a date, say so. That is step 5 happening live.
 
-Have the dry-run output saved as a fallback tab.
+The fallback tab has the dry-run output.
+
+File: {weekly}
 """)
 
     # 7 PROCESS.md portal
@@ -336,7 +340,7 @@ Have the dry-run output saved as a fallback tab.
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
             "The method is this page", size=32, bold=True)
     textbox(s, Inches(0.8), Inches(1.5), Inches(8.6), Inches(0.45),
-            "Walk these seven steps on GitHub against the recap you just ran.",
+            "Walk these seven steps on GitHub against the update you just ran.",
             size=18, color=MUTED)
     steps = [
         "1. Name one job",
@@ -357,32 +361,33 @@ Have the dry-run output saved as a fallback tab.
             top = Inches(2.05 + r * 0.5)
         textbox(s, left, top, Inches(4.1), Inches(0.45), step, size=16, color=CREAM)
     fin(s, 7, f"""
-Open {process} and stay there. Do not flip back to slides for each step.
+Three minutes. Open PROCESS.md and stay there. About 25 seconds a step.
 
-For the recap you just ran:
-1. The job was already named — meeting recap — which is why it moved fast. Prompt: name-the-job.md
-2. Input = voice.md + meeting details + transcript. Output = one-page recap. Check = every item cites a line. Prompt: write-the-sop.md
-3. voice.md is the one context file that made the demo possible. Other jobs need more. Prompt: build-context.md
-4. meeting-recap.md produced the recap, not a clever conversation. If output is wrong, the file is wrong.
-5. Citation guard: no anchor, no claim. Gaps stay gaps. Prompt: verify.md  Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
-6. Three of the same correction is a rule. Two is a candidate. One is a fluke. Prompt: correct-the-file.md
-7. Do not put it on a timer until several hand-checked meetings. Frequency is not value. Prompt: schedule-it.md
+1. Name one job. Weekly update. Named before the demo, which is why it moved fast.
+2. Write the SOP. Inputs: three files plus evidence. Output: one screen. Check: every line cites something you can open.
+3. Put you in files you own. who-i-am, priorities, voice. Swap the tool tomorrow and nothing moves.
+4. The prompt file is the process. If the draft is wrong, the file is wrong.
+5. Verify. Cite or cut. Gaps stay gaps.
+6. Correct the file, not the chat. Three of the same correction is a rule.
+7. Only then schedule it. Three checked Fridays first.
 
-Then say: point the same seven steps at expense reports, hiring screens, incident recaps. Buying a smarter model does not skip workflow, data, authority, evaluation, audit, or an owner. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/workflow-readiness.md
+Then: point the seven steps at expense reports, hiring screens, incident recaps. A smarter model skips none of this.
 
-Come back to the deck for Monday homework, the levels, and the close. The ranking card (score-the-candidates.md) is not a slide in this cut; name it if someone has three ideas.
+Back to the deck for Monday, the levels, and the close. The ranking card is score-the-candidates.md. Name it if someone has three ideas.
+
+Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
 """)
 
-    # 8 Thirty minutes
+    # 8 Thirty minutes on Monday
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
-            "Thirty minutes on Monday: run meeting-recap once", size=28, bold=True)
+            "Thirty minutes on Monday. Run weekly-update once.", size=28, bold=True)
     monday = [
-        ("5 min", "Copy context-templates to a private folder. Fill in voice.md only."),
-        ("5 min", "Pick one real meeting from last week: title, date, attendees, notes."),
-        ("5 min", "Paste meeting-recap.md, voice.md, and the notes into your tool. Run it."),
-        ("10 min", "Check each owner and date against a line in the notes. No name? Unassigned."),
-        ("5 min", "Wrong? Fix the prompt or voice.md, not the chat. Run it again."),
+        ("10 min", "Copy context-templates to a private folder. Fill who-i-am.md, priorities.md, voice.md."),
+        ("5 min", "Pull last week: meetings, sent mail, work items. Ask Work IQ, or paste a list."),
+        ("5 min", "Paste weekly-update.md, the three files, and the evidence into your tool. Run it."),
+        ("5 min", "Check every Done line against something you can open. No source? Cut it."),
+        ("5 min", "Wrong? Fix the prompt or a context file, not the chat. Run it again."),
     ]
     for i, (t, d) in enumerate(monday):
         top = Inches(1.4 + i * 0.95)
@@ -390,24 +395,24 @@ Come back to the deck for Monday homework, the levels, and the close. The rankin
         textbox(s, Inches(1.05), top + Inches(0.2), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
         textbox(s, Inches(3.0), top + Inches(0.2), Inches(9.1), Inches(0.6), d, size=17, color=CREAM)
     textbox(s, Inches(0.8), Inches(6.25), Inches(11.5), Inches(0.5),
-            "Froze on picking a meeting? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
+            "Not sure what to automate next? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
             size=15, color=MUTED)
     fin(s, 8, """
-This mirrors the README 'Start here' path, but the deliverable is one real run. START-HERE.md first if the files are not on the machine yet. They already watched this exact run; Monday they do it on their own meeting.
+Ninety seconds. The README start-here path, but the deliverable is one real update on their own week.
 
-An owner or date that does not point at a line in the notes gets cut. If the notes name nobody, the recap says unassigned. That is the agent working.
+A Done line with no link gets cut. That is the agent working, not failing.
 
-Do not put the recap on a timer until they have checked it by hand several times.
+No timer until they have checked three Fridays by hand.
 """)
 
     # 9 Where this goes next
-    levels_note = blob("research/notes/agentic-levels.md")
+    levels_note = note_src("agentic-levels.md")
     s = blank(prs)
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Where this goes next", size=32, bold=True)
     levels = [
         ("LEVEL 0", "Human is the loop", "A working process.\nNo agent yet.", "Build this first."),
-        ("LEVEL 1  ← this kit", "Human in the loop", "The agent drafts.\nYou accept every output.", "Limit: your review time."),
+        ("LEVEL 1. This kit.", "Human in the loop", "The agent drafts.\nYou accept every output.", "Limit: your review time."),
         ("LEVEL 2", "Human on the loop", "You dispatch jobs, on a timer.\nYou check evidence, not every line.", "Limit: how hard your checks are."),
         ("LEVEL 3", "Human as orchestrator", "The agent reacts to signals.\nYou review the rules.", "Limit: how good your rules are."),
         ("LEVEL 4", "Autonomous", "The agent starts work itself.\nYou set the boundaries.", "Limit: the whole system, not the model."),
@@ -420,19 +425,19 @@ Do not put the recap on a timer until they have checked it by hand several times
         textbox(s, left + Inches(0.12), Inches(2.95), Inches(2.1), Inches(1.2), what, size=14, color=CREAM)
         textbox(s, left + Inches(0.12), Inches(4.25), Inches(2.1), Inches(0.55), limit, size=12, color=MUTED)
     textbox(s, Inches(0.8), Inches(5.15), Inches(11.5), Inches(0.5),
-            "Everything today is Level 1. Step 7 — schedule it — is the door to Level 2.",
+            "Everything today is Level 1. Step 7, schedule it, is the door to Level 2.",
             size=20, bold=True, color=GOLD)
     textbox(s, Inches(0.8), Inches(5.75), Inches(11.5), Inches(1.0),
             "Do not walk through it until the check in your SOP is one a careful stranger could apply in a minute.\nA better model does not move you up a level. Better checks do.",
             size=16, color=MUTED)
     fin(s, 9, f"""
-One minute. This is the map, not a step. Everything they watched today sits on the second card: the agent drafted, a human accepted every line.
+One minute. A map, not a step. Today sat on the second card: the agent drafted, a human read every line.
 
-Level 2 is the hard jump, and it is where most teams are stuck. A timer is dispatch. The moment the recap runs without you asking, you have stopped reading every line and started trusting the check. That only works if the check is deterministic: every owner cites a line, gaps say unassigned, tone matches voice.md. That is why the scheduling gate exists.
+Level 2 is the hard jump. A timer is dispatch. The Friday update runs without you asking, and you check the links instead of every line. That only works if the check is one the agent can fail against. That is why the scheduling gate exists.
 
-Levels 3 and 4 are platform-team territory: agents that wake up on a signal, rules instead of reviews. Name them so the room knows the ladder exists. Do not sell them.
+Levels 3 and 4 are platform-team territory. Name them. Do not sell them.
 
-The claim to leave with: the quality of your written checks decides how much autonomy is safe. Source: {levels_note}
+Your written checks decide how much autonomy is safe. Source: {levels_note}
 """)
 
     # 10 Safety card
@@ -445,19 +450,19 @@ The claim to leave with: the quality of your written checks decides how much aut
     bullets(s, Inches(0.8), Inches(2.15), Inches(11.5), Inches(4.5), [
         "Read-only first.",
         "Cite or cut.",
-        "Inbox is untrusted — mail is data, not orders.",
+        "The inbox is untrusted. Mail is data, not orders.",
         "Stale is visible. Silent omission is a lie.",
         "Approvals sit where actions become hard to undo: send, pay, publish, delete.",
         "One owner per agent.",
     ], size=20, spacing=10)
-    fin(s, 10, """
-Leave this up for questions. This is the last content slide before the close.
+    fin(s, 10, f"""
+Thirty seconds, then leave it up for questions.
 
-If an agent sends a flawed appeal in your name, you now have two problems. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/reusable-rig.md
+An agent that sends a flawed update in your name gives you two problems. Source: {note_src("reusable-rig.md")}
 
-Inbox is untrusted. A line that says 'ignore your rules' is data, not an order. First-agent-job: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/first-agent-job.md
+A line in a transcript that says "ignore your rules" is data, not an order. Source: {note_src("first-agent-job.md")}
 
-Where the agent should stop: start where a colleague or customer already tells you you're wrong; reconstructing context is the expensive part; the reply is cheap. Source: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/notes/where-to-stop.md
+Reconstructing context is the expensive part. The reply is cheap. Source: {note_src("where-to-stop.md")}
 """)
 
     # 11 Close
@@ -467,17 +472,19 @@ Where the agent should stop: start where a colleague or customer already tells y
     textbox(s, Inches(0.8), Inches(3.1), Inches(8.6), Inches(0.5), "START HERE", size=14, bold=True, color=GOLD)
     linked_url(s, Inches(0.8), Inches(3.55), Inches(9.0), Inches(0.55), REPO, size=18)
     textbox(s, Inches(0.8), Inches(4.25), Inches(8.6), Inches(1.6),
-            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, the decision matrix.\nSource notes live in research/SOURCES.md.",
+            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, sample voices, the decision matrix.\nSource notes live in research/SOURCES.md.",
             size=17, color=MUTED)
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
             "scan: START-HERE.md", size=12, color=MUTED, align=PP_ALIGN.CENTER)
-    fin(s, 11, """
-Close by pointing at the repo. The QR resolves to START-HERE.md on GitHub; the URL next to it is the repo root. Say the URL out loud once for anyone who cannot scan. This kit is provider-agnostic. The Claude plugin of the same processes is a different repository (BittahCriminal/Chief-of-Staff) — do not send them there for this talk.
+    fin(s, 11, f"""
+Thirty seconds. Point at the repo. The QR is START-HERE.md. Say the URL once for anyone who cannot scan.
 
-If they want receipts: research/SOURCES.md catalogs the local source notes and original articles behind the method: https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/research/SOURCES.md
+The kit works in any tool. The Claude plugin is a different repository. Do not send them there today.
 
-Offer to stay for the first job. Help them run the two tests live on something they did last week.
+Sources, if they want receipts: {sources}
+
+Offer to stay and run the two tests on something they did last week.
 """)
 
     assert len(prs.slides) == TOTAL, len(prs.slides)
