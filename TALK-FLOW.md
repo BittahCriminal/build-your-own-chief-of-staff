@@ -35,6 +35,30 @@ Also:
 - Do a dry run once so you know roughly what the output looks like.
 - Save that dry-run output as a fallback screenshot or a fifth tab.
 
+## Presenter card
+
+Nothing is typed live. Two commands before you walk up, run from the kit folder. They assume the private folder is `../chief-of-staff-context` as in `START-HERE.md`, with `voice.md` filled in and one meeting saved as `demo-meeting.md` (title, date, attendees, then the notes or transcript).
+
+Open the four tabs in order:
+
+```bash
+open https://github.com/BittahCriminal/build-your-own-chief-of-staff https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/prompts/workflows/meeting-recap.md https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/PROCESS.md
+```
+
+Then open your tool (Copilot, Cursor, Claude, ChatGPT, or Gemini) as the fourth tab.
+
+Put the whole demo paste on the clipboard and in a file:
+
+```bash
+cat prompts/workflows/meeting-recap.md ../chief-of-staff-context/voice.md ../chief-of-staff-context/demo-meeting.md | tee ../chief-of-staff-context/demo-paste.md | pbcopy
+```
+
+On slide 6, click the meeting-recap tab so the room sees the file, switch to your tool, paste, run. If you copied anything else in between, open `demo-paste.md`, select all, copy again.
+
+Fallback: save the dry-run output as `../chief-of-staff-context/demo-output.md` and keep it open in a fifth tab.
+
+Questions: the answers table below names a file for each. The three you are most likely to open are already tabs two and three, plus `prompts/process/score-the-candidates.md` for anyone with three ideas.
+
 ## 20-minute run of show, then questions (11 slides)
 
 Planned at 18.5 minutes so it lands at 20 for real. The demo is the only beat that stretches; everything else is one or two lines per slide.
