@@ -162,6 +162,7 @@ def build():
 
     sources = blob("research/SOURCES.md")
     weekly = blob("prompts/workflows/weekly-update.md")
+    guided = blob("prompts/process/guided-run.md")
     process = blob("PROCESS.md")
 
     def note_src(name):
@@ -234,7 +235,7 @@ Sources: {note_src("agent-shaped-work.md")} (checking costs as much as making) a
             "The core is craft. Taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest lift, not the most impressive one.",
             size=18, color=MUTED)
     fin(s, 3, f"""
-Ninety seconds. Edges are prep, checking, summarizing, packaging, handing off. Errors are cheap there, and a human can catch one without the whole thing breaking.
+One minute. Edges are prep, checking, summarizing, packaging, handing off. Errors are cheap there, and a human can catch one without the whole thing breaking.
 
 The core is where people want help first and where first projects die. Automate around the craft, not through it.
 
@@ -251,7 +252,7 @@ Source: {note_src("why-agent-projects-fail.md")}
     add_rect(s, Inches(6.9), Inches(1.5), Inches(5.5), Inches(4.7), NAVY2)
     textbox(s, Inches(1.1), Inches(1.75), Inches(5), Inches(0.5), "OPERATIONAL. Automate.", size=14, bold=True, color=GOLD)
     bullets(s, Inches(1.1), Inches(2.4), Inches(5), Inches(3.5), [
-        "Weekly update. We open this file next.",
+        "Weekly update. We run this job next.",
         "Morning brief",
         "Meeting prep",
         "Meeting recap",
@@ -271,11 +272,11 @@ Source: {note_src("why-agent-projects-fail.md")}
             "The weekly update needs three context files, who you are, the quarter's priorities, and your voice, plus last week's evidence.",
             size=15, color=MUTED)
     fin(s, 4, f"""
-Ninety seconds. Left column: the portable jobs from the Delegation Kit, in operator English. Source: {note_src("delegation-kit.md")}
+One minute. Left column: the portable jobs from the Delegation Kit, in operator English. Source: {note_src("delegation-kit.md")}
 
 Right column is not "AI cannot do it". It is "checking it costs as much as doing it".
 
-Flag the weekly update. Next slide leaves PowerPoint. You open the file on GitHub, copy it, and run it in your editor.
+Flag the weekly update. Next slide leaves PowerPoint. You paste one prompt in your editor and it walks the room through the job.
 """)
 
     # 5 Open the kit
@@ -312,26 +313,26 @@ Source: {note_src("reusable-rig.md")} (skills local, inspectable, independent of
 
     # 6 Live demo portal
     s = blank(prs)
-    github_dest(s, "prompts/workflows/weekly-update.md", weekly)
+    github_dest(s, "prompts/process/guided-run.md", guided)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
-            "Weekly update, live", size=32, bold=True)
+            "Pick a job and go, live", size=32, bold=True)
     bullets(s, Inches(0.8), Inches(1.55), Inches(8.6), Inches(2.8), [
-        "Three context files: who-i-am.md, priorities.md, voice.md. Plus last week's evidence, pulled from Work IQ before the talk.",
-        "Every Done line has to cite a ticket, a meeting, or a message you can open.",
-        "Copy the prompt from GitHub. Paste it with the files and the evidence into your editor. Run it.",
+        "One prompt. It asks which job, then how you reach each kind of evidence: a connector like Work IQ, a paste, a file, or skip.",
+        "It gathers one kind at a time and shows an inventory. Items with no link stay out of Done.",
+        "Then it drafts in your voice and runs the check line by line. You click one link.",
     ], size=18, spacing=12)
     fin(s, 6, f"""
-Six minutes. Leave PowerPoint. Show the file on GitHub for ten seconds, then switch to the editor.
+Eight minutes. Leave PowerPoint. Show guided-run.md on GitHub for ten seconds, then the editor.
 
-The paste is already on the clipboard: the prompt, the three context files, last week's evidence. Paste. Run.
+Paste. The clipboard holds the prompt and the three context files. It asks which job. Ask the room. Type weekly update.
 
-While it runs, say where the evidence came from: meetings, sent mail, and work items, one Work IQ prompt each.
+It asks how you reach meetings. Ask the room who has a connector and who would paste. Type connector, Work IQ. Run the query it hands you in the Copilot tab. Paste the answer back.
 
-Read the draft out loud. Click one Done link. If the model invented a number or a date, say so. That is step 5 happening live.
+For commitments and work items, say you ran those this morning and paste the sections from evidence.md. Point at the lines with no link.
 
-The fallback tab has the dry-run output.
+Approve the inventory. Read the draft. It runs the check. Click one link. If it invented something, say so. That is step 5 live. Ask it which file to fix.
 
-File: {weekly}
+The fallback tab has the dry run. File: {guided}
 """)
 
     # 7 PROCESS.md portal
@@ -361,13 +362,13 @@ File: {weekly}
             top = Inches(2.05 + r * 0.5)
         textbox(s, left, top, Inches(4.1), Inches(0.45), step, size=16, color=CREAM)
     fin(s, 7, f"""
-Three minutes. Open PROCESS.md and stay there. About 25 seconds a step.
+Two and a half minutes. Open PROCESS.md and stay there. About 20 seconds a step.
 
-1. Name one job. Weekly update. Named before the demo, which is why it moved fast.
+1. Name one job. Weekly update. The room named it in the first question.
 2. Write the SOP. Inputs: three files plus evidence. Output: one screen. Check: every line cites something you can open.
 3. Put you in files you own. who-i-am, priorities, voice. Swap the tool tomorrow and nothing moves.
 4. The prompt file is the process. If the draft is wrong, the file is wrong.
-5. Verify. Cite or cut. Gaps stay gaps.
+5. Verify. Cite or cut. The unverified pile is this step.
 6. Correct the file, not the chat. Three of the same correction is a rule.
 7. Only then schedule it. Three checked Fridays first.
 
@@ -384,8 +385,7 @@ Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
             "Thirty minutes on Monday. Run weekly-update once.", size=28, bold=True)
     monday = [
         ("10 min", "Copy context-templates to a private folder. Fill who-i-am.md, priorities.md, voice.md."),
-        ("5 min", "Pull last week: meetings, sent mail, work items. Ask Work IQ, or paste a list."),
-        ("5 min", "Paste weekly-update.md, the three files, and the evidence into your tool. Run it."),
+        ("10 min", "Paste guided-run.md and the three files. Pick weekly update. Answer its questions. Gather evidence the way it offers: connector, paste, or file."),
         ("5 min", "Check every Done line against something you can open. No source? Cut it."),
         ("5 min", "Wrong? Fix the prompt or a context file, not the chat. Run it again."),
     ]
@@ -398,7 +398,7 @@ Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
             "Not sure what to automate next? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
             size=15, color=MUTED)
     fin(s, 8, """
-Ninety seconds. The README start-here path, but the deliverable is one real update on their own week.
+One minute. The README start-here path, but the deliverable is one real update on their own week. The guided run asks for what it needs and stops if a file is missing. That is not a failure.
 
 A Done line with no link gets cut. That is the agent working, not failing.
 
@@ -472,7 +472,7 @@ Reconstructing context is the expensive part. The reply is cheap. Source: {note_
     textbox(s, Inches(0.8), Inches(3.1), Inches(8.6), Inches(0.5), "START HERE", size=14, bold=True, color=GOLD)
     linked_url(s, Inches(0.8), Inches(3.55), Inches(9.0), Inches(0.55), REPO, size=18)
     textbox(s, Inches(0.8), Inches(4.25), Inches(8.6), Inches(1.6),
-            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, sample voices, the decision matrix.\nSource notes live in research/SOURCES.md.",
+            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nThe guided run, process files, CoS workflows, blank context templates, sample voices.\nSource notes live in research/SOURCES.md.",
             size=17, color=MUTED)
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),

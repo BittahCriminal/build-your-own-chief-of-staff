@@ -11,17 +11,18 @@ These are plain markdown files. They work in GitHub Copilot, Cursor, Claude, Cha
 ## What you walk away with
 
 1. How to stand up a personal Chief of Staff agent without writing code.
-2. How to decide what *should* be an agent — and what should stay human.
+2. How to decide what *should* be an agent, and what should stay human.
 3. A folder of prompt files you can copy, fill in, and run on Monday.
 
 ## Start here (30 minutes)
 
 0. Put the kit in your space: [`START-HERE.md`](START-HERE.md) (browser, unzip, or Cursor). Workstation shortcut: paste [`prompts/process/bring-it-home.md`](prompts/process/bring-it-home.md).
-1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method — including **why this stalls** and what to do when you freeze.
-2. Fill in the **private** context folder (not `context-templates/` in this repo). For the fastest first run, start with `voice.md`, then bring one meeting's title, date, attendees, and notes to [`meeting-recap.md`](prompts/workflows/meeting-recap.md). If you watched the talk, fill `who-i-am.md` and `priorities.md` too and run [`weekly-update.md`](prompts/workflows/weekly-update.md) on last week instead. Three sample voices for researchers, managers, and stakeholders are in [`context-templates/voices/`](context-templates/voices/). Add the other context files as later workflows require them (10 min).
-3. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win. If you have three or more candidates, rank them with [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md) (5 min).
-4. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
-5. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat. After three clean passes, package recurring jobs with [`prompts/process/schedule-it.md`](prompts/process/schedule-it.md) (see [`how-to/schedule.md`](how-to/schedule.md)).
+1. Read [`PROCESS.md`](PROCESS.md) (10 min). That is the whole method, including **why this stalls** and what to do when you freeze.
+2. Fill in the **private** context folder (not `context-templates/` in this repo). For the fastest first run, start with `voice.md`, then bring one meeting's title, date, attendees, and notes to [`meeting-recap.md`](prompts/workflows/meeting-recap.md). If you watched the talk, fill `who-i-am.md` and `priorities.md` too and go to step 3. Three sample voices for researchers, managers, and stakeholders are in [`context-templates/voices/`](context-templates/voices/). Add the other context files as later workflows require them (10 min).
+3. Paste [`prompts/process/guided-run.md`](prompts/process/guided-run.md) with your context files. It asks which job, asks how you reach each kind of evidence (a connector such as Work IQ, a paste, a file, or skip), gathers the evidence with you, drafts, and runs the check. Once a job is named and `sources.md` is filled, paste the workflow file directly instead (10 min).
+4. If you do not know what to automate, run [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md) first. Then run [`prompts/process/the-two-tests.md`](prompts/process/the-two-tests.md) on the one fast win. If you have three or more candidates, rank them with [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md) (5 min).
+5. If it passes: [`prompts/process/write-the-sop.md`](prompts/process/write-the-sop.md), then the matching workflow in [`prompts/workflows/`](prompts/workflows/) (5 min). If it fails: keep it. That is the lesson.
+6. Check the draft with [`prompts/process/verify.md`](prompts/process/verify.md). Fix the **file**, not the chat. After three clean passes, package recurring jobs with [`prompts/process/schedule-it.md`](prompts/process/schedule-it.md) (see [`how-to/schedule.md`](how-to/schedule.md)).
 
 Where to paste, by tool: [`how-to/`](how-to/).
 
@@ -53,7 +54,7 @@ It does not send email, change tickets, or act on instructions found inside an i
 ```
 START-HERE.md              get the kit onto a PC or workstation (read this first)
 PROCESS.md                 the method
-prompts/process/           how to turn any job into a workflow (includes bring-it-home, schedule-it)
+prompts/process/           how to turn any job into a workflow (includes guided-run, bring-it-home, schedule-it)
 prompts/workflows/         Chief of Staff jobs, as copy-paste prompts
 context-templates/         blanks to copy into a *private* folder; voices/ has three audience samples
 how-to/                    Copilot, Cursor, Claude, ChatGPT, Gemini, and scheduling
