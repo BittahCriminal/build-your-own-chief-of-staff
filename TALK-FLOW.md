@@ -1,12 +1,12 @@
 # Talk flow: 20 minutes, then questions
 
-11 slides. Three places on screen during the talk: the slides, GitHub in the browser, and your editor with the private folder open. Microsoft 365 Copilot is a fourth tab for pulling evidence with Work IQ. You use it before the talk, not during.
+11 slides. Four places on screen: the slides, GitHub in the browser, Microsoft 365 Copilot for one live Work IQ query, and your editor with the private folder open.
 
-The demo is `prompts/workflows/weekly-update.md`. Slide 6 is the pivot. Everything before it is why. Everything after it is how, using the update you just produced.
+The demo is `prompts/process/guided-run.md`, running the weekly update. You paste one prompt. It asks the room which job, asks how you reach each kind of evidence, gathers the evidence with you, drafts, and runs the check. Slide 6 is the pivot. Everything before it is why. Everything after it is how, using the update the room just produced.
 
 ## Why the weekly update is the demo
 
-Every operator in the room already writes one on Friday, so nobody has to imagine the job. It has the clearest check of the six: every Done line cites a ticket, a meeting, or a message you can open. And it shows the context files doing work, because the same evidence reads differently to a manager, a researcher, and a stakeholder.
+Every operator in the room already writes one on Friday, so nobody has to imagine the job. It has the clearest check of the six: every Done line cites a ticket, a meeting, or a message you can open. And it has three kinds of evidence, which is what makes the evidence-gathering interactive. The room sees a connector path, a paste path, and the Unverified pile in one run.
 
 | Workflow | Required context files before it produces anything |
 | --- | --- |
@@ -17,84 +17,60 @@ Every operator in the room already writes one on Friday, so nobody has to imagin
 | `morning-brief.md` | `priorities.md`, `people.md`, `open-loops.md` |
 | `open-loops.md` | `open-loops.md` only, plus today's date |
 
-The cost is three filled context files, so the prep is yours, not the room's. If someone in the room has none of them filled, the meeting recap is the cheaper first run at home. Slide 8 sends them to the weekly update anyway because they just watched it.
+The cost is three filled context files, so the prep is yours, not the room's. Someone with none of them filled can run the meeting recap at home first. Slide 8 sends them to the guided run anyway, because it asks for what it needs and stops if a file is missing.
 
 ## Prep the day before
 
 1. Fill three private files in `../chief-of-staff-context`: `who-i-am.md`, `priorities.md`, `voice.md`.
-2. Pick the voice for the demo. Use your own `voice.md`, or copy one of the three samples in `context-templates/voices/` (researchers, managers, stakeholders) over it and say on stage that it is a sample. The managers sample is the natural fit for a weekly update.
-3. Pull last week's evidence with the three Work IQ prompts below. Save the answers as `../chief-of-staff-context/evidence.md`.
-4. Do the dry run with the presenter card commands. Save the output as `../chief-of-staff-context/demo-output.md`. That is your fallback tab.
-5. Read `demo-output.md` against the evidence once. Know which line you will click on stage, and whether the model invented anything. An invented number is a better teaching moment than a clean run, but you want to know it is there.
+2. Pick the voice. Use your own `voice.md`, or copy one of the three samples in `context-templates/voices/` (researchers, managers, stakeholders) over it and say on stage that it is a sample. The managers sample fits a weekly update.
+3. Run two of the three Work IQ queries from `guided-run.md`, step 3, in Microsoft 365 Copilot: commitments and asks, and work items and files. Save the answers as `../chief-of-staff-context/evidence.md` under those two headings. Leave meetings for the live query.
+4. Do the full dry run with the presenter card commands, including the live meetings query. Save the final draft as `../chief-of-staff-context/demo-output.md`. That is your fallback tab.
+5. Read `demo-output.md` against the evidence once. Know which link you will click on stage, and whether the model invented anything. An invented number is a better teaching moment than a clean run, but you want to know it is there.
 
-## Work IQ prompts
-
-Paste each one into Microsoft 365 Copilot chat on its own. Replace the two dates. Paste each answer under its heading in `evidence.md`.
-
-Prompt 1, meetings:
-
-```
-From my calendar and meeting notes between Monday <date> and Friday <date>, list every meeting I attended. For each one give the date, the title, the decisions recorded, and the action items assigned to me. Include a link to the meeting or its recap. If a meeting has no notes or recap, write "no notes" instead of summarizing the invite.
-```
-
-Prompt 2, commitments and asks:
-
-```
-From my sent mail and my Teams messages between Monday <date> and Friday <date>, list every commitment I made (something I said I would do or deliver) and every ask I made of someone else. For each one give the date, who it was to, what it was, the deadline if I named one, and a link to the message. Leave out messages I only received.
-```
-
-Prompt 3, work items and files:
-
-```
-From work items assigned to me and files I edited in SharePoint or OneDrive between Monday <date> and Friday <date>, list each item with its state (todo, in progress, blocked, or done), the date it last changed, and a link. Mark anything that reached done this week.
-```
-
-Use this shape for `evidence.md`. The date range in the first line is the date range the prompt asks for.
+Use this shape for `evidence.md`:
 
 ```
 # Evidence, week of <Mon date> to <Fri date>
 
-## Meetings (Work IQ, prompt 1)
+## Commitments and asks (Work IQ, pasted)
 
-## Commitments and asks (Work IQ, prompt 2)
-
-## Work items and files (Work IQ, prompt 3)
+## Work items and files (Work IQ, pasted)
 
 ## Unverified
 ```
 
-Any line Work IQ returns without a link goes under Unverified. The weekly-update prompt will leave it out of Done, which is the point.
+Any line Work IQ returns without a link goes under Unverified. The guided run keeps it out of Done, which is the point.
 
 ## Presenter card
 
-Nothing is typed live. Two commands before you walk up, run from the kit folder.
+Nothing is typed live except the answers to the agent's questions. Two commands before you walk up, run from the kit folder.
 
 Open the three GitHub tabs in slide order:
 
 ```bash
-open https://github.com/BittahCriminal/build-your-own-chief-of-staff https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/prompts/workflows/weekly-update.md https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/PROCESS.md
+open https://github.com/BittahCriminal/build-your-own-chief-of-staff https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/prompts/process/guided-run.md https://github.com/BittahCriminal/build-your-own-chief-of-staff/blob/main/PROCESS.md
 ```
 
 Build the demo paste, save it, and put it on the clipboard:
 
 ```bash
-cat prompts/workflows/weekly-update.md ../chief-of-staff-context/who-i-am.md ../chief-of-staff-context/priorities.md ../chief-of-staff-context/voice.md ../chief-of-staff-context/evidence.md | tee ../chief-of-staff-context/demo-paste.md | pbcopy
+cat prompts/process/guided-run.md ../chief-of-staff-context/who-i-am.md ../chief-of-staff-context/priorities.md ../chief-of-staff-context/voice.md | tee ../chief-of-staff-context/demo-paste.md | pbcopy
 ```
 
-Then open your editor with the kit folder and the private folder, start an empty chat, and leave it there. If you copy anything else before slide 6, open `demo-paste.md`, select all, copy again.
+Then open Microsoft 365 Copilot chat in a fourth tab, and your editor with the kit folder, the private folder, and `evidence.md` open. Start an empty chat in the editor and leave it there. If you copy anything else before slide 6, open `demo-paste.md`, select all, copy again.
 
-Tabs, in order: README, weekly-update.md, PROCESS.md, your editor, the fallback `demo-output.md`.
+Tabs, in order: README, guided-run.md, PROCESS.md, Microsoft 365 Copilot, your editor, the fallback `demo-output.md`.
 
 ## Run of show
 
-Planned at 18.5 minutes so it lands at 20 for real. The demo is the only beat that stretches.
+Planned at 19 minutes so it lands at 20 for real. The demo is the only beat that stretches.
 
 | Slides | Where | Time |
 | --- | --- | --- |
-| 1 to 4 | Slides | 6 min |
+| 1 to 4 | Slides | 5 min |
 | 5 | GitHub, README | 1 min |
-| 6 | GitHub, then your editor | 6 min |
-| 7 | GitHub, PROCESS.md | 3 min |
+| 6 | GitHub, then Copilot, then your editor | 8 min |
+| 7 | GitHub, PROCESS.md | 2.5 min |
 | 8 to 11 | Slides | 2.5 min |
 | Questions | Slide 10 stays up | rest of the slot |
 
@@ -106,7 +82,7 @@ Where: slides. Time: 1 minute.
 
 - This is not a product demo. Nobody leaves with a login or a reason to switch tools.
 - They leave with a process they can run Monday in whatever they already have.
-- The Chief of Staff is the worked example. The weekly update is the file we run live.
+- The Chief of Staff is the worked example. The weekly update is the job we run live, with the room.
 - The prize is the two tests. Expense reports, hiring screens, customer research next month.
 
 ---
@@ -124,7 +100,7 @@ Where: slides. Time: 2 minutes.
 
 ### Slide 3 of 11. Start at the edges, not the core
 
-Where: slides. Time: 90 seconds.
+Where: slides. Time: 1 minute.
 
 - Edges: prep, check, summarize, package, hand off. Errors are cheap and a human can catch one.
 - The core is where people want help first and where first projects die.
@@ -134,11 +110,11 @@ Where: slides. Time: 90 seconds.
 
 ### Slide 4 of 11. The Chief of Staff is the teaching case
 
-Where: slides. Time: 90 seconds.
+Where: slides. Time: 1 minute.
 
 - Left column, automate. Right column, keep.
 - The right column is not "AI cannot do it". It is "checking it costs as much as doing it".
-- Flag the weekly update. Say the next slide leaves PowerPoint.
+- Flag the weekly update. Say the next slide leaves PowerPoint and the room picks the job.
 
 ---
 
@@ -154,36 +130,40 @@ Do: switch back to the slides for slide 6.
 
 ---
 
-### Slide 6 of 11. Weekly update, live
+### Slide 6 of 11. Pick a job and go, live
 
-Where: slides for ten seconds, then the weekly-update.md tab, then your editor. Time: 6 minutes.
+Where: slides for ten seconds, then the guided-run.md tab, then your editor, then Copilot for one query, then back to the editor. Time: 8 minutes.
 
 Say while the slide is up:
 
-- Three context files and last week's evidence. The evidence came from Work IQ, one prompt each for meetings, sent mail, and work items.
-- Every Done line has to cite something you can open. That is the check.
+- One prompt. It asks which job, then how you reach each kind of evidence. Four answers every time: a connector, a paste, a file, or skip.
+- The room answers the questions. I type.
 
 Do, in this order:
 
-1. Click the weekly-update.md tab. Ten seconds. "This is the whole prompt. Inputs, steps, output, check."
-2. Switch to the editor. Paste into the empty chat. The clipboard holds the prompt, then who-i-am.md, priorities.md, voice.md, and evidence.md, in that order. Say the order out loud.
-3. Run it. While it runs, say which voice you used and that the same evidence would read differently to a researcher or a stakeholder. The samples are in context-templates/voices/.
-4. Read the draft out loud, top to bottom. Click one Done link. Check one number against evidence.md.
-5. If the model invented an owner, a date, or a metric, say so. That is step 5, cite or cut, happening live.
+1. Click the guided-run.md tab. Ten seconds. "Six steps. Pick, reach, gather, inventory, draft, check."
+2. Switch to the editor. Paste into the empty chat. The clipboard holds the prompt, then who-i-am.md, priorities.md, and voice.md. Say so.
+3. It asks which job. Ask the room. Type "weekly update, last week". Name the voice you loaded.
+4. It asks how you reach meetings. Ask the room: "Who has a connector in their tool? Who would paste?" Type "connector, Microsoft 365 with Work IQ, I will paste the answer".
+5. It hands you the meetings query. Copy it. Switch to the Copilot tab. Paste. Run. Copy the answer. Back to the editor. Paste. "That is Work IQ. If you have no connector, this step is you pasting a list."
+6. It asks how you reach commitments, then work items. Say you ran those two this morning, and paste each section from evidence.md. "Same query, run yesterday. Notice which lines have no link."
+7. It shows the inventory. Read the unverified count out loud. Type "yes".
+8. Read the draft top to bottom. It runs the check. Click one Done link. Check one number against evidence.md.
+9. If it invented an owner, a date, or a metric, say so. That is step 5, cite or cut, happening live. Ask it which file to fix.
 
-If the tool stalls past 90 seconds, switch to the fallback tab and narrate from `demo-output.md`.
+If the tool stalls past 90 seconds at any step, switch to the fallback tab and narrate from `demo-output.md`.
 
 ---
 
 ### Slide 7 of 11. The method is this page
 
-Where: the PROCESS.md tab. Stay there. Time: 3 minutes, about 25 seconds a step.
+Where: the PROCESS.md tab. Stay there. Time: 2.5 minutes, about 20 seconds a step.
 
-1. Name one job. Weekly update. Named before the demo, which is why it moved fast.
+1. Name one job. Weekly update. The room named it in the first question.
 2. Write the SOP. Inputs: three files plus evidence. Output: one screen. Check: every line cites something you can open.
 3. Put you in files you own. Swap the tool tomorrow and nothing moves.
 4. The prompt file is the process. Wrong draft, wrong file.
-5. Verify. Cite or cut. Gaps stay gaps.
+5. Verify. Cite or cut. The unverified pile is this step.
 6. Correct the file, not the chat. Three of the same correction is a rule.
 7. Only then schedule it. Three checked Fridays first.
 
@@ -195,11 +175,11 @@ Do: switch back to the slides.
 
 ### Slide 8 of 11. Thirty minutes on Monday
 
-Where: slides. Time: 90 seconds.
+Where: slides. Time: 1 minute.
 
-- Same run, their own week. Three files, the evidence, the prompt, the check, one fix.
-- A Done line with no link gets cut. That is the agent working.
-- No timer until three Fridays checked by hand.
+- Same run, their own week. Three files, the guided run, the check, one fix.
+- The guided run asks for what it needs and stops if a file is missing. That is not a failure.
+- A Done line with no link gets cut. No timer until three Fridays checked by hand.
 
 ---
 
@@ -243,7 +223,8 @@ Leave slide 10 up. Likely questions and where to point:
 | Question | Answer |
 | --- | --- |
 | Which model is best? | Whatever you already pay for. The job and the check are the work. [`how-to/`](how-to/) is only which box to paste into. |
-| Does this need Work IQ? | No. Work IQ was the fastest way to pull my evidence. A pasted list of tickets and meeting links works. `sources.md` is where you name your systems. |
+| Does this need Work IQ? | No. It was the connector I had. The guided run offers connector, paste, file, or skip for every kind of evidence. A pasted list of tickets and meeting links works. |
+| Do I answer all those questions every time? | No. Once the job is named and `sources.md` is filled, paste the workflow file directly with the evidence. The guided run is for the first run and for a room. |
 | How do I write for a different audience? | Same evidence, different `voice.md`. Three samples are in [`context-templates/voices/`](context-templates/voices/). Your own sent mail beats all of them. |
 | I have three ideas, which first? | [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md). A zero on repeatable or verifiable overrides the total. |
 | I do not know what to automate. | [`prompts/process/what-to-automate.md`](prompts/process/what-to-automate.md). Last week, split the blob, edges, two tests, one fast win. |
@@ -260,7 +241,7 @@ A teaser, not the 20-minute talk compressed. Six slides, one GitHub file, one li
 | Slide 1 | 1 min | Title. The process, not the tool. |
 | Slide 2 | 2 min | The two tests. |
 | Slide 4 | 2 min | The CoS split. Flag the weekly update. |
-| Slide 6, then the editor | 5 min | Live run. Narrate inputs, steps, output, check from the actual paste and result. |
+| Slide 6, then the editor | 5 min | Guided run. Pick the job with the room, do one kind of evidence live, paste the other two, draft, check. |
 | Slide 8 | 2 min | Thirty minutes on Monday. |
 | Slide 11 | 1 min | Close. URL and QR to `START-HERE.md`. |
 
@@ -268,8 +249,8 @@ Say three things out loud instead of showing them: drafts only, never send (slid
 
 ## If the demo does not cooperate
 
-The fallback tab has `demo-output.md`. Narrate from it. If the model invents something that is not in the evidence, that is a live example of why step 5 exists. Point at it and say so.
+The fallback tab has `demo-output.md`. Narrate from it. If the model invents something that is not in the evidence, that is a live example of why step 5 exists. Point at it and say so. If the Copilot tab is slow, skip the live query and paste all three sections from `evidence.md`.
 
 ## After the talk
 
-Point people at the [`README.md`](README.md) start-here path. It names the meeting recap as the cheapest first run for someone with no context files filled, and the weekly update for anyone who watched this talk. Anyone who leaves with three ideas instead of one gets [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md).
+Point people at the [`README.md`](README.md) start-here path. It names the guided run as the first thing to paste once the context files exist. Anyone who leaves with three ideas instead of one gets [`prompts/process/score-the-candidates.md`](prompts/process/score-the-candidates.md).

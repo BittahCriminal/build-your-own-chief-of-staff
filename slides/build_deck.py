@@ -162,6 +162,7 @@ def build():
 
     sources = blob("research/SOURCES.md")
     weekly = blob("prompts/workflows/weekly-update.md")
+    guided = blob("prompts/process/guided-run.md")
     process = blob("PROCESS.md")
 
     def note_src(name):
@@ -174,12 +175,12 @@ def build():
     textbox(s, Inches(0.8), Inches(2.2), Inches(11.5), Inches(1.6),
             "Build your own\nchief of staff agent", size=44, bold=True, color=CREAM)
     textbox(s, Inches(0.8), Inches(4.5), Inches(11.5), Inches(1.2),
-            "Teach the process, not a tool.\nLeave knowing how to build a CoS agent, and how to automate\nanything that is repeatable and verifiable.",
+            "Teach the process, not a tool.\nLeave knowing how to build a chief of staff agent, and how to automate\nanything that is repeatable and verifiable.",
             size=20, color=MUTED)
     fin(s, 1, f"""
 One minute. Not a product demo. Nobody leaves with a login or a reason to switch tools. They leave with a process they can run Monday in whatever they already have.
 
-The Chief of Staff agent is the worked example. The weekly update is the file we run live.
+The Chief of Staff agent is the worked example. The weekly update is the job we run live, with the room.
 
 The prize is the two tests. They will use them on expense reports, hiring screens, and customer research next month.
 
@@ -194,7 +195,7 @@ Sources, if asked: {sources} (21 notes, with the original article named in each)
     add_rect(s, Inches(6.9), Inches(1.7), Inches(5.5), Inches(4.3), NAVY2)
     textbox(s, Inches(1.1), Inches(2.0), Inches(5), Inches(0.6), "1. Repeatable", size=26, bold=True, color=GOLD)
     textbox(s, Inches(1.1), Inches(2.8), Inches(5), Inches(2.6),
-            "You would do the same steps next week.\nSame kinds of inputs. Same shape of output.\n\nSpecial cases every time is judgment.\nKeep it.",
+            "You would do the same steps next week.\nThe inputs are the same kind. The output is the same shape.\n\nSpecial cases every time is judgment.\nKeep it.",
             size=18, color=CREAM)
     textbox(s, Inches(7.2), Inches(2.0), Inches(5), Inches(0.6), "2. Verifiable", size=26, bold=True, color=GOLD)
     textbox(s, Inches(7.2), Inches(2.8), Inches(5), Inches(2.6),
@@ -203,13 +204,13 @@ Sources, if asked: {sources} (21 notes, with the original article named in each)
     fin(s, 2, f"""
 Two minutes. This is the slide they photograph.
 
-Repeatable, yes: the weekly update, same headings every Friday with new evidence. No: which of two candidates to hire.
+Repeatable. The weekly update passes, same headings every Friday with new evidence. Choosing which of two candidates to hire fails.
 
-Verifiable, yes: every Done line cites a ticket or a message you can open. No: "make it sound professional".
+Verifiable. A Done line that cites a ticket or a message you can open passes. "Make it sound professional" fails.
 
 Fail either test, do not automate. The leftover is judgment: taste, red lines, how a room will land. Keep it.
 
-If the room is stuck at an empty prompt: "handle my email" is seventeen jobs. Split it. The prompt for that is what-to-automate.md.
+If the room is stuck at an empty prompt, say that "handle my email" is seventeen jobs, and split it. The prompt for that is what-to-automate.md.
 
 Sources: {note_src("agent-shaped-work.md")} (checking costs as much as making) and {note_src("verification-gap.md")} (if you cannot name "not yet", you have a vibe).
 """)
@@ -219,11 +220,11 @@ Sources: {note_src("agent-shaped-work.md")} (checking costs as much as making) a
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Start at the edges, not the core", size=32, bold=True)
     edges = [
-        ("Prep", "Collect, clean, reconcile"),
-        ("Check", "Completeness, obvious errors"),
-        ("Summarize", "A thread into one page"),
-        ("Package", "Analysis into a brief or an update"),
-        ("Hand off", "Move context. Stop being the glue."),
+        ("Prep", "Collect, clean, and reconcile the inputs."),
+        ("Check", "Check for completeness and obvious errors."),
+        ("Summarize", "Turn a thread into one page."),
+        ("Package", "Turn the analysis into a brief or an update."),
+        ("Hand off", "Move context between people. Stop carrying it by hand."),
     ]
     for i, (h, d) in enumerate(edges):
         left = Inches(0.55 + i * 2.5)
@@ -231,12 +232,12 @@ Sources: {note_src("agent-shaped-work.md")} (checking costs as much as making) a
         textbox(s, left + Inches(0.12), Inches(1.8), Inches(2.1), Inches(0.7), h, size=20, bold=True, color=GOLD)
         textbox(s, left + Inches(0.12), Inches(2.55), Inches(2.1), Inches(1.4), d, size=15, color=CREAM)
     textbox(s, Inches(0.8), Inches(4.55), Inches(11.5), Inches(1.8),
-            "The core is craft. Taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest lift, not the most impressive one.",
+            "The core is craft. Taste, red lines, how a room lands. Protect it.\nPick the simplest edge with the clearest gain, not the most impressive one.",
             size=18, color=MUTED)
     fin(s, 3, f"""
-Ninety seconds. Edges are prep, checking, summarizing, packaging, handing off. Errors are cheap there, and a human can catch one without the whole thing breaking.
+One minute. Edges are prep, checking, summarizing, packaging, handing off. Errors are cheap there, and a human can catch one without the whole thing breaking.
 
-The core is where people want help first and where first projects die. Automate around the craft, not through it.
+The core is where people want help first and where first projects die. Automate the work around the craft, not the craft itself.
 
 The weekly update is packaging. When to push, and which story to tell, stays core.
 
@@ -251,7 +252,7 @@ Source: {note_src("why-agent-projects-fail.md")}
     add_rect(s, Inches(6.9), Inches(1.5), Inches(5.5), Inches(4.7), NAVY2)
     textbox(s, Inches(1.1), Inches(1.75), Inches(5), Inches(0.5), "OPERATIONAL. Automate.", size=14, bold=True, color=GOLD)
     bullets(s, Inches(1.1), Inches(2.4), Inches(5), Inches(3.5), [
-        "Weekly update. We open this file next.",
+        "Weekly update. We run this job next.",
         "Morning brief",
         "Meeting prep",
         "Meeting recap",
@@ -268,14 +269,14 @@ Source: {note_src("why-agent-projects-fail.md")}
         "Anything you would not put your name on unread",
     ], size=18, spacing=10)
     textbox(s, Inches(0.9), Inches(6.3), Inches(11.8), Inches(0.5),
-            "The weekly update needs three context files, who you are, the quarter's priorities, and your voice, plus last week's evidence.",
+            "The weekly update needs three context files: who you are, the quarter's priorities, and your voice. Plus last week's evidence.",
             size=15, color=MUTED)
     fin(s, 4, f"""
-Ninety seconds. Left column: the portable jobs from the Delegation Kit, in operator English. Source: {note_src("delegation-kit.md")}
+One minute. The left column is the portable jobs from the Delegation Kit, in operator English. Source: {note_src("delegation-kit.md")}
 
-Right column is not "AI cannot do it". It is "checking it costs as much as doing it".
+The right column is not "AI cannot do it". It is "checking it costs as much as doing it".
 
-Flag the weekly update. Next slide leaves PowerPoint. You open the file on GitHub, copy it, and run it in your editor.
+Flag the weekly update. The next slide leaves PowerPoint. You paste one prompt in your editor and it walks the room through the job.
 """)
 
     # 5 Open the kit
@@ -284,14 +285,14 @@ Flag the weekly update. Next slide leaves PowerPoint. You open the file on GitHu
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
             "Open the kit", size=32, bold=True)
     textbox(s, Inches(0.8), Inches(1.5), Inches(8.6), Inches(0.7),
-            "Same markdown. Copilot, Cursor, Claude, ChatGPT, or Gemini.\nClick the tree. Do not tour every file.",
+            "The same markdown works in Copilot, Cursor, Claude, ChatGPT, and Gemini.\nClick the tree. Do not tour every file.",
             size=18, color=MUTED)
     kit = [
         ("START-HERE.md", "Get the files onto a PC"),
         ("PROCESS.md", "The method. We walk it after the demo"),
-        ("prompts/workflows/", "The CoS jobs, ready to paste"),
+        ("prompts/workflows/", "The chief of staff jobs, ready to paste"),
         ("prompts/process/", "Turn any job into a workflow"),
-        ("context-templates/", "Blanks. Copy privately. Fill them."),
+        ("context-templates/", "Blanks. Copy them privately and fill them in."),
         ("how-to/", "Which box to paste into"),
     ]
     for i, (fn, desc) in enumerate(kit):
@@ -301,37 +302,37 @@ Flag the weekly update. Next slide leaves PowerPoint. You open the file on GitHu
         textbox(s, left, top, Inches(2.75), Inches(0.4), fn, size=13, bold=True, color=GOLD)
         textbox(s, left, top + Inches(0.35), Inches(2.75), Inches(0.5), desc, size=12, color=CREAM)
     fin(s, 5, f"""
-One minute. Click the URL. Stay on the README. Point at the six names. Personal data never ships here; the templates are blanks.
+One minute. Click the URL. Stay on the README. Point at the six names. Personal data never ships here. The templates are blanks.
 
 Park "which model is best" for questions. Once the job is named and the check exists, use what they already pay for.
 
-Then the next slide. Do not open PROCESS.md yet.
+Then go to the next slide. Do not open PROCESS.md yet.
 
 Source: {note_src("reusable-rig.md")} (skills local, inspectable, independent of the app you rent).
 """)
 
     # 6 Live demo portal
     s = blank(prs)
-    github_dest(s, "prompts/workflows/weekly-update.md", weekly)
+    github_dest(s, "prompts/process/guided-run.md", guided)
     textbox(s, Inches(0.8), Inches(0.75), Inches(11.5), Inches(0.7),
-            "Weekly update, live", size=32, bold=True)
+            "Pick a job and go, live", size=32, bold=True)
     bullets(s, Inches(0.8), Inches(1.55), Inches(8.6), Inches(2.8), [
-        "Three context files: who-i-am.md, priorities.md, voice.md. Plus last week's evidence, pulled from Work IQ before the talk.",
-        "Every Done line has to cite a ticket, a meeting, or a message you can open.",
-        "Copy the prompt from GitHub. Paste it with the files and the evidence into your editor. Run it.",
+        "One prompt. It asks which job, then how you reach each kind of evidence: a connector like Work IQ, a paste, a file, or skip.",
+        "It gathers one kind at a time and shows an inventory. Items with no link stay out of Done.",
+        "Then it drafts in your voice and runs the check line by line. You click one link.",
     ], size=18, spacing=12)
     fin(s, 6, f"""
-Six minutes. Leave PowerPoint. Show the file on GitHub for ten seconds, then switch to the editor.
+Eight minutes. Leave PowerPoint. Show guided-run.md on GitHub for ten seconds, then switch to the editor.
 
-The paste is already on the clipboard: the prompt, the three context files, last week's evidence. Paste. Run.
+Paste. The clipboard holds the prompt and the three context files. It asks which job. Ask the room. Type weekly update.
 
-While it runs, say where the evidence came from: meetings, sent mail, and work items, one Work IQ prompt each.
+It asks how you reach meetings. Ask the room who has a connector and who would paste. Type connector, Work IQ. Run the query it hands you in the Copilot tab. Paste the answer back.
 
-Read the draft out loud. Click one Done link. If the model invented a number or a date, say so. That is step 5 happening live.
+For commitments and work items, say you ran those this morning and paste the sections from evidence.md. Point at the lines with no link.
 
-The fallback tab has the dry-run output.
+Approve the inventory. Read the draft. It runs the check. Click one link. If it invented something, say so. That is step 5 happening live. Ask it which file to fix.
 
-File: {weekly}
+The fallback tab has the dry run. File: {guided}
 """)
 
     # 7 PROCESS.md portal
@@ -361,19 +362,19 @@ File: {weekly}
             top = Inches(2.05 + r * 0.5)
         textbox(s, left, top, Inches(4.1), Inches(0.45), step, size=16, color=CREAM)
     fin(s, 7, f"""
-Three minutes. Open PROCESS.md and stay there. About 25 seconds a step.
+Two and a half minutes. Open PROCESS.md and stay there. About 20 seconds a step.
 
-1. Name one job. Weekly update. Named before the demo, which is why it moved fast.
-2. Write the SOP. Inputs: three files plus evidence. Output: one screen. Check: every line cites something you can open.
-3. Put you in files you own. who-i-am, priorities, voice. Swap the tool tomorrow and nothing moves.
+1. Name one job. Weekly update. The room named it in the first question.
+2. Write the SOP. The inputs are three files plus the evidence. The output is one screen. The check is that every line cites something you can open.
+3. Put you in files you own. Those files are who-i-am, priorities, and voice. Swap the tool tomorrow and nothing moves.
 4. The prompt file is the process. If the draft is wrong, the file is wrong.
-5. Verify. Cite or cut. Gaps stay gaps.
+5. Verify. Cite or cut. The unverified pile is this step.
 6. Correct the file, not the chat. Three of the same correction is a rule.
 7. Only then schedule it. Three checked Fridays first.
 
-Then: point the seven steps at expense reports, hiring screens, incident recaps. A smarter model skips none of this.
+Then say the same seven steps apply to expense reports, hiring screens, and incident recaps. A smarter model skips none of them.
 
-Back to the deck for Monday, the levels, and the close. The ranking card is score-the-candidates.md. Name it if someone has three ideas.
+Go back to the deck for Monday, the levels, and the close. The ranking card is score-the-candidates.md. Name it if someone has three ideas.
 
 Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
 """)
@@ -383,11 +384,10 @@ Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
     textbox(s, Inches(0.8), Inches(0.45), Inches(11), Inches(0.8),
             "Thirty minutes on Monday. Run weekly-update once.", size=28, bold=True)
     monday = [
-        ("10 min", "Copy context-templates to a private folder. Fill who-i-am.md, priorities.md, voice.md."),
-        ("5 min", "Pull last week: meetings, sent mail, work items. Ask Work IQ, or paste a list."),
-        ("5 min", "Paste weekly-update.md, the three files, and the evidence into your tool. Run it."),
-        ("5 min", "Check every Done line against something you can open. No source? Cut it."),
-        ("5 min", "Wrong? Fix the prompt or a context file, not the chat. Run it again."),
+        ("10 min", "Copy context-templates to a private folder. Fill in who-i-am.md, priorities.md, and voice.md."),
+        ("10 min", "Paste guided-run.md and the three files. Pick weekly update. Answer its questions. Gather evidence the way it offers: connector, paste, or file."),
+        ("5 min", "Check every Done line against something you can open. A line with no source gets cut."),
+        ("5 min", "If the draft is wrong, fix the prompt or a context file, not the chat. Run it again."),
     ]
     for i, (t, d) in enumerate(monday):
         top = Inches(1.4 + i * 0.95)
@@ -395,14 +395,14 @@ Sources: {note_src("reusable-rig.md")} and {note_src("workflow-readiness.md")}
         textbox(s, Inches(1.05), top + Inches(0.2), Inches(1.8), Inches(0.5), t, size=18, bold=True, color=GOLD)
         textbox(s, Inches(3.0), top + Inches(0.2), Inches(9.1), Inches(0.6), d, size=17, color=CREAM)
     textbox(s, Inches(0.8), Inches(6.25), Inches(11.5), Inches(0.5),
-            "Not sure what to automate next? what-to-automate.md. Left with three ideas? score-the-candidates.md.",
+            "If you do not know what to automate next, run what-to-automate.md. If you leave with three ideas, run score-the-candidates.md.",
             size=15, color=MUTED)
     fin(s, 8, """
-Ninety seconds. The README start-here path, but the deliverable is one real update on their own week.
+One minute. This is the README start-here path, but the deliverable is one real update on their own week. The guided run asks for what it needs and stops if a file is missing. That is not a failure.
 
 A Done line with no link gets cut. That is the agent working, not failing.
 
-No timer until they have checked three Fridays by hand.
+Do not put it on a timer until they have checked three Fridays by hand.
 """)
 
     # 9 Where this goes next
@@ -412,10 +412,10 @@ No timer until they have checked three Fridays by hand.
             "Where this goes next", size=32, bold=True)
     levels = [
         ("LEVEL 0", "Human is the loop", "A working process.\nNo agent yet.", "Build this first."),
-        ("LEVEL 1. This kit.", "Human in the loop", "The agent drafts.\nYou accept every output.", "Limit: your review time."),
-        ("LEVEL 2", "Human on the loop", "You dispatch jobs, on a timer.\nYou check evidence, not every line.", "Limit: how hard your checks are."),
-        ("LEVEL 3", "Human as orchestrator", "The agent reacts to signals.\nYou review the rules.", "Limit: how good your rules are."),
-        ("LEVEL 4", "Autonomous", "The agent starts work itself.\nYou set the boundaries.", "Limit: the whole system, not the model."),
+        ("LEVEL 1. This kit.", "Human in the loop", "The agent drafts.\nYou accept every output.", "Limited by your review time."),
+        ("LEVEL 2", "Human on the loop", "You dispatch jobs, on a timer.\nYou check evidence, not every line.", "Limited by how hard your checks are."),
+        ("LEVEL 3", "Human as orchestrator", "The agent reacts to signals.\nYou review the rules.", "Limited by how good your rules are."),
+        ("LEVEL 4", "Autonomous", "The agent starts work itself.\nYou set the boundaries.", "Limited by the whole system, not the model."),
     ]
     for i, (lvl, name, what, limit) in enumerate(levels):
         left = Inches(0.55 + i * 2.5)
@@ -425,17 +425,17 @@ No timer until they have checked three Fridays by hand.
         textbox(s, left + Inches(0.12), Inches(2.95), Inches(2.1), Inches(1.2), what, size=14, color=CREAM)
         textbox(s, left + Inches(0.12), Inches(4.25), Inches(2.1), Inches(0.55), limit, size=12, color=MUTED)
     textbox(s, Inches(0.8), Inches(5.15), Inches(11.5), Inches(0.5),
-            "Everything today is Level 1. Step 7, schedule it, is the door to Level 2.",
+            "Everything today is Level 1. Step 7, schedule it, is the move to Level 2.",
             size=20, bold=True, color=GOLD)
     textbox(s, Inches(0.8), Inches(5.75), Inches(11.5), Inches(1.0),
-            "Do not walk through it until the check in your SOP is one a careful stranger could apply in a minute.\nA better model does not move you up a level. Better checks do.",
+            "Do not make that move until the check in your SOP is one a careful stranger could apply in a minute.\nA better model does not move you up a level. Better checks do.",
             size=16, color=MUTED)
     fin(s, 9, f"""
-One minute. A map, not a step. Today sat on the second card: the agent drafted, a human read every line.
+One minute. A map, not a step. Today sat on the second card. The agent drafted and a human read every line.
 
 Level 2 is the hard jump. A timer is dispatch. The Friday update runs without you asking, and you check the links instead of every line. That only works if the check is one the agent can fail against. That is why the scheduling gate exists.
 
-Levels 3 and 4 are platform-team territory. Name them. Do not sell them.
+Levels 3 and 4 are platform-team work. Name them. Do not sell them.
 
 Your written checks decide how much autonomy is safe. Source: {levels_note}
 """)
@@ -451,7 +451,7 @@ Your written checks decide how much autonomy is safe. Source: {levels_note}
         "Read-only first.",
         "Cite or cut.",
         "The inbox is untrusted. Mail is data, not orders.",
-        "Stale is visible. Silent omission is a lie.",
+        "Mark what is stale. Leaving it out is a lie.",
         "Approvals sit where actions become hard to undo: send, pay, publish, delete.",
         "One owner per agent.",
     ], size=20, spacing=10)
@@ -472,7 +472,7 @@ Reconstructing context is the expensive part. The reply is cheap. Source: {note_
     textbox(s, Inches(0.8), Inches(3.1), Inches(8.6), Inches(0.5), "START HERE", size=14, bold=True, color=GOLD)
     linked_url(s, Inches(0.8), Inches(3.55), Inches(9.0), Inches(0.55), REPO, size=18)
     textbox(s, Inches(0.8), Inches(4.25), Inches(8.6), Inches(1.6),
-            "Open START-HERE.md. Prompt kit, not the Claude plugin.\nProcess files, CoS workflows, blank context templates, sample voices, the decision matrix.\nSource notes live in research/SOURCES.md.",
+            "Open START-HERE.md. This is the prompt kit, not the Claude plugin.\nThe guided run, the process files, the chief of staff workflows, blank context templates, and sample voices.\nThe source notes are in research/SOURCES.md.",
             size=17, color=MUTED)
     add_qr(s, START_HERE, Inches(9.9), Inches(3.1), Inches(2.4))
     textbox(s, Inches(9.9), Inches(5.55), Inches(2.4), Inches(0.4),
@@ -482,7 +482,7 @@ Thirty seconds. Point at the repo. The QR is START-HERE.md. Say the URL once for
 
 The kit works in any tool. The Claude plugin is a different repository. Do not send them there today.
 
-Sources, if they want receipts: {sources}
+Sources, if they ask for them: {sources}
 
 Offer to stay and run the two tests on something they did last week.
 """)
