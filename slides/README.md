@@ -2,7 +2,7 @@
 
 Talk deck: [building-your-own-chief-of-staff.pptx](building-your-own-chief-of-staff.pptx) (11 slides). The argument is on the slides; after slide 4 you open GitHub for the files.
 
-Run of show: [TALK-FLOW.md](../TALK-FLOW.md) includes the 20-minute path with questions after, and a 15-minute teaser, which tabs to pre-open, and live-demo preparation.
+Run of show: [TALK-FLOW.md](../TALK-FLOW.md) is a slide-by-slide script for the 20-minute talk with questions after, plus a 15-minute teaser, which tabs to pre-open, and live-demo preparation.
 
 Rebuild (needs `python-pptx` and `qrcode`):
 
